@@ -5,6 +5,7 @@
  */
 package Akanoid;
 
+import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics2D;
 
@@ -37,10 +38,15 @@ public class MapGenerator {
                 if (map[i][j] > 0) {
                     g.setColor(Color.white);
                     g.fillRect(j * bricWidth + 80, i * bricHeight + 50, bricWidth, bricHeight);
+                    g.setStroke(new BasicStroke(3));
+                    g.setColor(Color.black);
+                    g.drawRect(j * bricWidth + 80, i * bricHeight + 50, bricWidth, bricHeight);
                 }
             }
         }
     }
 
-    //public 
+    public void setBrickValue (int value, int row, int col) {
+        map[row][col] = value;
+    } 
 }
