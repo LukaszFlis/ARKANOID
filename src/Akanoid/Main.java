@@ -14,7 +14,7 @@ import org.jdesktop.layout.GroupLayout;
  *
  * @author Luk
  */
-public class Main extends javax.swing.JFrame {  
+public class Main extends javax.swing.JFrame {
 
     /**
      * Creates new form Main
@@ -37,6 +37,7 @@ public class Main extends javax.swing.JFrame {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         ResourceBundle bundle = ResourceBundle.getBundle("Akanoid/Bundle"); // NOI18N
         setTitle(bundle.getString("Main.title")); // NOI18N
+        setLocationByPlatform(true);
         setResizable(false);
         setSize(new Dimension(700, 600));
 
@@ -61,14 +62,6 @@ public class Main extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
-    
-    
-    
-    
-    
-    
-    
     /**
      * @param args the command line arguments
      */
@@ -89,7 +82,7 @@ public class Main extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        
+
         //</editor-fold>
 
         /* Create and display the form */

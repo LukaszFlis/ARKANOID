@@ -7,6 +7,7 @@ package Akanoid;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -21,37 +22,44 @@ import javax.swing.Timer;
  * @author Luk
  */
 public class GamePlay extends JPanel implements ActionListener, KeyListener, Serializable {
-
+    
     private boolean play = false;
     private int score = 0;
     private int totalBricks = 21;
-
+    
+    private MapGenerator map;
+    
     private Timer time;
     private int delay = 8;
-
+    
     private int paddleX = 310;
-    private final  int paddleY = 550;
-
+    private final int paddleY = 550;
+    
     private int ballX = 120;
     private int ballY = 350;
     private int ballXDir = -1;
     private int ballYDir = -2;
-
+    
     public GamePlay() {
         addKeyListener(this);
         setFocusable(true);
         setFocusTraversalKeysEnabled(false);
-   
+        
         time = new Timer(delay, this);
         time.start();
+        
+        map = new MapGenerator(3, 7);
     }
-
+    
     @Override
     public void paint(Graphics g) {
 
         //Background of the game
         g.setColor(Color.black);
         g.fillRect(1, 1, 692, 592);
+
+        //draw bricks
+        map.draw((Graphics2D) g);
 
         //borders
         g.setColor(Color.yellow);
@@ -66,46 +74,45 @@ public class GamePlay extends JPanel implements ActionListener, KeyListener, Ser
         //the ball
         g.setColor(Color.blue);
         g.fillOval(ballX, ballY, 20, 20);
-
+        
         g.dispose();
     }
-
+    
     @Override
     public void actionPerformed(ActionEvent e) {
         time.start();
         
-        
-        if (new  Rectangle(ballX, ballY, 20, 20).intersects(new Rectangle(paddleX, paddleY, 100, 8))) {
+        if (new Rectangle(ballX, ballY, 20, 20).intersects(new Rectangle(paddleX, paddleY, 100, 8))) {
             ballYDir = -ballYDir;
         }
         
         if (play) {
             ballX += ballXDir;
             ballY += ballYDir;
-
+            
             if (ballX < 0) {
                 ballXDir = -ballXDir;
             }
-
+            
             if (ballY < 0) {
                 ballYDir = -ballYDir;
             }
-
+            
             if (ballX >= 670) {
-                ballXDir = -ballXDir; 
+                ballXDir = -ballXDir;                
             }
         }
         
         repaint();
     }
-
+    
     @Override
     public void keyTyped(KeyEvent e) {
     }
-
+    
     @Override
     public void keyPressed(KeyEvent e) {
-
+        
         if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
             if (paddleX >= 580) {
                 paddleX = 580;
@@ -113,7 +120,7 @@ public class GamePlay extends JPanel implements ActionListener, KeyListener, Ser
                 moveRigth();
             }
         }
-
+        
         if (e.getKeyCode() == KeyEvent.VK_LEFT) {
             if (paddleX < 10) {
                 paddleX = 10;
@@ -122,19 +129,19 @@ public class GamePlay extends JPanel implements ActionListener, KeyListener, Ser
             }
         }
     }
-
+    
     @Override
     public void keyReleased(KeyEvent e) {
     }
-
+    
     public void moveRigth() {
         play = true;
         paddleX += 20;
     }
-
+    
     public void moveLeft() {
         play = true;
         paddleX -= 20;
     }
-
+    
 }
