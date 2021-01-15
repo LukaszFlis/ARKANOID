@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Akanoid;
 
 import java.awt.Dimension;
@@ -15,7 +10,6 @@ import org.jdesktop.layout.GroupLayout;
  * @author Luk
  */
 public class Main extends javax.swing.JFrame {
-
     /**
      * Creates new form Main
      */
@@ -38,25 +32,27 @@ public class Main extends javax.swing.JFrame {
         ResourceBundle bundle = ResourceBundle.getBundle("Akanoid/Bundle"); // NOI18N
         setTitle(bundle.getString("Main.title")); // NOI18N
         setLocationByPlatform(true);
-        setResizable(false);
-        setSize(new Dimension(700, 600));
+        setPreferredSize(new Dimension(706, 600));
+        setSize(new Dimension(703, 603));
+
+        gamePlay1.setPreferredSize(new Dimension(705, 603));
 
         GroupLayout gamePlay1Layout = new GroupLayout(gamePlay1);
         gamePlay1.setLayout(gamePlay1Layout);
         gamePlay1Layout.setHorizontalGroup(gamePlay1Layout.createParallelGroup(GroupLayout.LEADING)
-            .add(0, 700, Short.MAX_VALUE)
+            .add(0, 705, Short.MAX_VALUE)
         );
         gamePlay1Layout.setVerticalGroup(gamePlay1Layout.createParallelGroup(GroupLayout.LEADING)
-            .add(0, 600, Short.MAX_VALUE)
+            .add(0, 603, Short.MAX_VALUE)
         );
 
         GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(layout.createParallelGroup(GroupLayout.LEADING)
-            .add(gamePlay1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+            .add(gamePlay1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(layout.createParallelGroup(GroupLayout.LEADING)
-            .add(gamePlay1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .add(gamePlay1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -90,7 +86,7 @@ public class Main extends javax.swing.JFrame {
             new Main().setVisible(true);
         });
     }
-
+     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private GamePlay gamePlay1;
     // End of variables declaration//GEN-END:variables

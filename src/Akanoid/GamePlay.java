@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Akanoid;
 
 import java.awt.Color;
@@ -24,7 +19,7 @@ import javax.swing.Timer;
  */
 public class GamePlay extends JPanel implements ActionListener, KeyListener, Serializable {
 
-    private boolean play = false;
+    static boolean play = false;
     private int score = 0;
     private int totalBricks = 21;
 
@@ -33,23 +28,22 @@ public class GamePlay extends JPanel implements ActionListener, KeyListener, Ser
     private Timer time;
     private int delay = 4;
 
-    private int paddleX = 310;
+    static int paddleX = 300;
     private final int paddleY = 550;
 
-    private int ballX = 120;
+    static int ballX = 120;
     private int ballY = 350;
-    private int ballXDir = -1;
-    private int ballYDir = -2;
+    private int ballXDir = 1;
+    private int ballYDir = 2;
 
     public GamePlay() {
         addKeyListener(this);
         setFocusable(true);
         setFocusTraversalKeysEnabled(false);
-
         time = new Timer(delay, this);
         time.start();
-
         map = new MapGenerator(3, 7);
+        FLC.play();
     }
 
     @Override
@@ -57,16 +51,16 @@ public class GamePlay extends JPanel implements ActionListener, KeyListener, Ser
 
         //Background of the game
         g.setColor(Color.black);
-        g.fillRect(1, 1, 692, 592);
+        g.fillRect(1, 1, 700, 600);
 
         //draw bricks
         map.draw((Graphics2D) g);
 
         //borders
         g.setColor(Color.yellow);
-        g.fillRect(0, 0, 3, 692);
-        g.fillRect(0, 0, 692, 3);
-        g.fillRect(689, 0, 3, 592);
+        g.fillRect(0, 0, 3, 700);
+        g.fillRect(0, 0, 700, 3);
+        g.fillRect(700, 0, 3, 600);
 
         //score
         g.setColor(Color.white);
@@ -90,9 +84,9 @@ public class GamePlay extends JPanel implements ActionListener, KeyListener, Ser
             g.drawString("You Won! Score: " + score, 190, 300);
             g.setFont(new Font("serif", Font.BOLD, 20));
             g.drawString("Press Enter to Restart", 230, 350);
-            
+
         }
-        
+
         if (ballY > 570) {
             play = false;
             ballXDir = 0;
@@ -102,7 +96,7 @@ public class GamePlay extends JPanel implements ActionListener, KeyListener, Ser
             g.drawString("Game Over. Score: " + score, 190, 300);
             g.setFont(new Font("serif", Font.BOLD, 20));
             g.drawString("Press Enter to Restart", 230, 350);
-            
+
         }
 
         g.dispose();
@@ -114,13 +108,12 @@ public class GamePlay extends JPanel implements ActionListener, KeyListener, Ser
         if (play) {
             if (new Rectangle(ballX, ballY, 20, 20).intersects(new Rectangle(paddleX, paddleY, 100, 8))) {
                 ballYDir = -ballYDir;
-                delay --;
+                delay--;
             }
 
             A:
             for (int i = 0; i < map.map.length; i++) {
                 for (int j = 0; j < map.map[0].length; j++) {
-
                     if (map.map[i][j] > 0) {
                         int brickX = j * map.bricWidth + 80;
                         int brickY = i * map.bricHeight + 50;
@@ -190,13 +183,12 @@ public class GamePlay extends JPanel implements ActionListener, KeyListener, Ser
             if (!play) {
                 ballX = 120;
                 ballY = 350;
-                ballXDir = -1;
-                ballYDir = -2;
-                paddleX = 320;
+                ballXDir = 1;
+                ballYDir = 2;
+                paddleX = 300;
                 score = 0;
                 totalBricks = 21;
                 map = new MapGenerator(3, 7);
-                
                 repaint();
             }
         }
@@ -207,7 +199,6 @@ public class GamePlay extends JPanel implements ActionListener, KeyListener, Ser
     }
 
     public void moveRigth() {
-
         play = true;
         paddleX += 20;
     }
@@ -217,4 +208,7 @@ public class GamePlay extends JPanel implements ActionListener, KeyListener, Ser
         paddleX -= 20;
     }
 
+    public int getTotalBricks() {
+        return totalBricks;
+    }
 }
