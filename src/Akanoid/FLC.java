@@ -4,101 +4,137 @@ import static Akanoid.GamePlay.ballX;
 import static Akanoid.GamePlay.paddleX;
 import static Akanoid.GamePlay.play;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
  * @author Luk
  */
 public class FLC {
-
+    private Scanner sc = new Scanner(System.in);
     private final int dif = -220;
-    private ArrayList<Integer> zero = new ArrayList<>(11);
-    private ArrayList<Integer> someLeft = new ArrayList<>(10);
-    private ArrayList<Integer> Left = new ArrayList<>(10);
-    private ArrayList<Integer> ExtremeLeft = new ArrayList<>(8);
-    private ArrayList<Integer> someRight = new ArrayList<>(10);
-    private ArrayList<Integer> Right = new ArrayList<>(10);
-    private ArrayList<Integer> ExtremeRight = new ArrayList<>(8);
+    private Pairs pair;
+    private ArrayList<Pairs> zero = new ArrayList<>(11);
+    private ArrayList<Pairs> someLeft = new ArrayList<>(10);
+    private ArrayList<Pairs> left = new ArrayList<>(10);
+    private ArrayList<Pairs> extremeLeft = new ArrayList<>(8);
+    private ArrayList<Pairs> someRight = new ArrayList<>(10);
+    private ArrayList<Pairs> right = new ArrayList<>(10);
+    private ArrayList<Pairs> extremeRight = new ArrayList<>(8);
 
     public FLC() {
         init();
     }
 
     /**
-     * Initialize all private components
+     * Initialize components
      */
     public void init() {
         initZero(zero);
         initSomeLeft(someLeft);
-        initLeft(Left);
-        initExtremeLeft(ExtremeLeft);
-        initSomeRight(someRight);
-        initRight(Right);
-        initExtremeRigth(ExtremeRight);
-
+        initLeft(left);
+        initExtremeLeft(extremeLeft);
+        initSomeRigth(someRight);
+        initRigth(right);
+        initExtremeRigth(extremeRight);
     }
 
-    public void initZero(ArrayList<Integer> list) {
-        list.stream().map(_item -> -100).map(x -> {
-            list.add(x);
-            return x;
-        }).forEachOrdered(x -> {
-            x += 20;
-        });
+    /**
+     *Metoda iniciująca wartości zbioru rozmytego ZERO
+     * @param list ArrayList przyjmująca pary wartości (u- wartośći funkcji przynależności x- elementy zmiennej lingwistycznej RÓŻNICA)
+     */
+    public void initZero(ArrayList<Pairs> list) {
+        double u;
+        double x;
+        for (Pairs list1 : list) {
+            u = sc.nextDouble();
+            x = sc.nextDouble();
+            list.add(pair = new Pairs (u, x));
+        }
     }
 
-    public void initSomeLeft(ArrayList<Integer> list) {
-        list.stream().map(_item -> -200).map(x -> {
-            list.add(x);
-            return x;
-        }).forEachOrdered(x -> {
-            x += 20;
-        });
+    /**
+     * Metoda iniciująca wartości zbioru rozmytego SomeLeft
+     * @param list ArrayList przyjmująca pary wartości (u- wartośći funkcji przynależności x- elementy zmiennej lingwistycznej RÓŻNICA)
+     */
+    public void initSomeLeft(ArrayList<Pairs> list) {
+        double u;
+        double x;
+        for (Pairs list1 : list) {
+            u = sc.nextDouble();
+            x = sc.nextDouble();
+            list.add(pair = new Pairs (u, x));
+        }
     }
 
-    public void initLeft(ArrayList<Integer> list) {
-        list.stream().map(_item -> -300).map(x -> {
-            list.add(x);
-            return x;
-        }).forEachOrdered(x -> {
-            x += 20;
-        });
+    /**
+     *Metoda iniciująca wartości zbioru rozmytego SomeLeft
+     * @param list ArrayList przyjmująca pary wartości (u- wartośći funkcji przynależności x- elementy zmiennej lingwistycznej RÓŻNICA)
+     */
+    public void initLeft(ArrayList<Pairs> list) {
+        double u;
+        double x;
+        for (Pairs list1 : list) {
+            u = sc.nextDouble();
+            x = sc.nextDouble();
+            list.add(pair = new Pairs (u, x));
+        }
     }
 
-    public void initExtremeLeft(ArrayList<Integer> list) {
-        list.stream().map(_item -> -340).map(x -> {
-            list.add(x);
-            return x;
-        }).forEachOrdered(x -> {
-            x += 20;
-        });
+    /**
+     * Metoda iniciująca wartości zbioru rozmytego SomeLeft
+     * @param list ArrayList przyjmująca pary wartości (u- wartośći funkcji przynależności x- elementy zmiennej lingwistycznej RÓŻNICA)
+     */
+    public void initExtremeLeft(ArrayList<Pairs> list) {
+        double u;
+        double x;
+        for (Pairs list1 : list) {
+            u = sc.nextDouble();
+            x = sc.nextDouble();
+            list.add(pair = new Pairs (u, x));
+        }
     }
 
-    public void initSomeRight(ArrayList<Integer> list) {
-        list.stream().map(_item -> 0).map(x -> {
-            list.add(x);
-            return x;
-        }).forEachOrdered(x -> {
-            x += 20;
-        });
+    /**
+     * Metoda iniciująca wartości zbioru rozmytego SomeLeft
+     * @param list ArrayList przyjmująca pary wartości (u- wartośći funkcji przynależności x- elementy zmiennej lingwistycznej RÓŻNICA)
+     */
+    public void initSomeRigth(ArrayList<Pairs> list) {
+        double u;
+        double x;
+        for (Pairs list1 : list) {
+            u = sc.nextDouble();
+            x = sc.nextDouble();
+            list.add(pair = new Pairs (u, x));
+        }
     }
 
-    public void initRight(ArrayList<Integer> list) {
-        list.stream().map(_item -> 100).map(x -> {
-            list.add(x);
-            return x;
-        }).forEachOrdered(x -> {
-            x += 20;
-        });
+    /**
+     * Metoda iniciująca wartości zbioru rozmytego SomeLeft
+     * @param list ArrayList przyjmująca pary wartości (u- wartośći funkcji przynależności x- elementy zmiennej lingwistycznej RÓŻNICA)
+     */
+    public void initRigth(ArrayList<Pairs> list) {
+        double u;
+        double x;
+        for (Pairs list1 : list) {
+            u = sc.nextDouble();
+            x = sc.nextDouble();
+            list.add(pair = new Pairs (u, x));
+        }
     }
 
-    public void initExtremeRigth(ArrayList<Integer> list) {
-        list.stream().map(_item -> 200).map(x -> {
-            list.add(x);
-            return x;
-        }).forEachOrdered(x -> {
-            x += 20;
-        });
+    /**
+     * Metoda iniciująca wartości zbioru rozmytego SomeLeft
+     * @param list ArrayList przyjmująca pary wartości (u- wartośći funkcji przynależności x- elementy zmiennej lingwistycznej RÓŻNICA)
+     */
+    public void initExtremeRigth(ArrayList<Pairs> list) {
+        double u;
+        double x;
+        for (Pairs list1 : list) {
+            u = sc.nextDouble();
+            x = sc.nextDouble();
+            list.add(pair = new Pairs (u, x));
+        }
     }
 
     /**
