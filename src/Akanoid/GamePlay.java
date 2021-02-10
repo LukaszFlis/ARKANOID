@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 
 /**
- *
+ * Main content of the game
  * @author Luk
  */
 public class GamePlay extends JPanel implements ActionListener, KeyListener, Serializable {
@@ -43,7 +43,6 @@ public class GamePlay extends JPanel implements ActionListener, KeyListener, Ser
         time = new Timer(delay, this);
         time.start();
         map = new MapGenerator(3, 7);
-        FLC.play();
     }
 
     @Override
@@ -51,7 +50,7 @@ public class GamePlay extends JPanel implements ActionListener, KeyListener, Ser
 
         //Background of the game
         g.setColor(Color.black);
-        g.fillRect(1, 1, 700, 600);
+        g.fillRect(1, 1, 720, 600);
 
         //draw bricks
         map.draw((Graphics2D) g);

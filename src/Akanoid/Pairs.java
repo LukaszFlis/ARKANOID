@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Akanoid;
 
 import java.util.Objects;
@@ -12,9 +7,9 @@ import java.util.Objects;
  * @author Luk
  */
 public class Pairs {
-    //1Współrzędna łuku
+    //wartośc funkcji przynależności
     double u;
-    //2Współrzędna łuku
+    //wartość elementu zmiennej lingwistycznej
     double x;
     
     //Konstruktor iniciujący
@@ -22,6 +17,24 @@ public class Pairs {
         this.u = u;
         this.x = x;
     }
+
+    public double getU() {
+        return u;
+    }
+
+    public void setU(double u) {
+        this.u = u;
+    }
+
+    public double getX() {
+        return x;
+    }
+
+    public void setX(double x) {
+        this.x = x;
+    }
+    
+    
 
     /**
      *
