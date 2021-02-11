@@ -41,7 +41,7 @@ public class Main extends javax.swing.JFrame {
         setResizable(false);
         setSize(new Dimension(703, 603));
 
-        jTabbedPane1.setEnabled(false);
+        jTabbedPane1.setFocusable(false);
 
         GroupLayout gamePlay2Layout = new GroupLayout(gamePlay2);
         gamePlay2.setLayout(gamePlay2Layout);
