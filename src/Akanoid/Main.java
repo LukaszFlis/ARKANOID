@@ -2,6 +2,8 @@ package Akanoid;
 
 import java.awt.Dimension;
 import java.util.ResourceBundle;
+import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
 import javax.swing.WindowConstants;
 import org.jdesktop.layout.GroupLayout;
 
@@ -26,33 +28,52 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        gamePlay1 = new GamePlay();
+        jTabbedPane1 = new JTabbedPane();
+        gamePlay2 = new GamePlay();
+        jPanel1 = new JPanel();
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         ResourceBundle bundle = ResourceBundle.getBundle("Akanoid/Bundle"); // NOI18N
         setTitle(bundle.getString("Main.title")); // NOI18N
         setLocationByPlatform(true);
-        setPreferredSize(new Dimension(706, 600));
+        setMaximumSize(new Dimension(750, 650));
+        setPreferredSize(new Dimension(730, 630));
+        setResizable(false);
         setSize(new Dimension(703, 603));
 
-        gamePlay1.setPreferredSize(new Dimension(705, 603));
+        jTabbedPane1.setEnabled(false);
 
-        GroupLayout gamePlay1Layout = new GroupLayout(gamePlay1);
-        gamePlay1.setLayout(gamePlay1Layout);
-        gamePlay1Layout.setHorizontalGroup(gamePlay1Layout.createParallelGroup(GroupLayout.LEADING)
-            .add(0, 705, Short.MAX_VALUE)
+        GroupLayout gamePlay2Layout = new GroupLayout(gamePlay2);
+        gamePlay2.setLayout(gamePlay2Layout);
+        gamePlay2Layout.setHorizontalGroup(gamePlay2Layout.createParallelGroup(GroupLayout.LEADING)
+            .add(0, 700, Short.MAX_VALUE)
         );
-        gamePlay1Layout.setVerticalGroup(gamePlay1Layout.createParallelGroup(GroupLayout.LEADING)
-            .add(0, 603, Short.MAX_VALUE)
+        gamePlay2Layout.setVerticalGroup(gamePlay2Layout.createParallelGroup(GroupLayout.LEADING)
+            .add(0, 575, Short.MAX_VALUE)
         );
+
+        jTabbedPane1.addTab(bundle.getString("Main.gamePlay2.TabConstraints.tabTitle"), gamePlay2); // NOI18N
+
+        GroupLayout jPanel1Layout = new GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(jPanel1Layout.createParallelGroup(GroupLayout.LEADING)
+            .add(0, 700, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(jPanel1Layout.createParallelGroup(GroupLayout.LEADING)
+            .add(0, 575, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab(bundle.getString("Main.jPanel1.TabConstraints.tabTitle"), jPanel1); // NOI18N
+
+        jTabbedPane1.setSelectedComponent(gamePlay2);
 
         GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(layout.createParallelGroup(GroupLayout.LEADING)
-            .add(gamePlay1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+            .add(jTabbedPane1)
         );
         layout.setVerticalGroup(layout.createParallelGroup(GroupLayout.LEADING)
-            .add(gamePlay1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+            .add(jTabbedPane1)
         );
 
         pack();
@@ -88,6 +109,8 @@ public class Main extends javax.swing.JFrame {
     }
      
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private GamePlay gamePlay1;
+    private GamePlay gamePlay2;
+    private JPanel jPanel1;
+    private JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
 }

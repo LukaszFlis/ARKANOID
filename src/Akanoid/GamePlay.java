@@ -15,27 +15,30 @@ import javax.swing.Timer;
 
 /**
  * Main content of the game
+ *
  * @author Luk
  */
 public class GamePlay extends JPanel implements ActionListener, KeyListener, Serializable {
 
+    FLC flc = new FLC();
     static boolean play = false;
     private int score = 0;
     private int totalBricks = 21;
 
     private MapGenerator map;
 
-    private Timer time;
+    private final Timer time;
     private int delay = 4;
 
-    static int paddleX = 300;
+    private int paddleX = 310;
     private final int paddleY = 550;
 
-    static int ballX = 120;
+    static int ballX = 130;
     private int ballY = 350;
     private int ballXDir = 1;
     private int ballYDir = 2;
 
+    @SuppressWarnings("LeakingThisInConstructor")
     public GamePlay() {
         addKeyListener(this);
         setFocusable(true);
@@ -45,26 +48,32 @@ public class GamePlay extends JPanel implements ActionListener, KeyListener, Ser
         map = new MapGenerator(3, 7);
     }
 
+    /**
+     *
+     * @param g
+     */
     @Override
-    public void paint(Graphics g) {
-
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        int width = getWidth();
+        int height = getHeight();
         //Background of the game
         g.setColor(Color.black);
-        g.fillRect(1, 1, 720, 600);
+        g.fillRect(1, 1, width -1, height -1);
 
         //draw bricks
         map.draw((Graphics2D) g);
 
         //borders
         g.setColor(Color.yellow);
-        g.fillRect(0, 0, 3, 700);
-        g.fillRect(0, 0, 700, 3);
-        g.fillRect(700, 0, 3, 600);
+        g.fillRect(0, 0, 3, 720);
+        g.fillRect(0, 0, 720, 3);
+        g.fillRect(720, 0, 3, 600);
 
         //score
         g.setColor(Color.white);
         g.setFont(new Font("serif", Font.BOLD, 25));
-        g.drawString("" + score, 590, 30);
+        g.drawString("" + score, 620, 30);
 
         //paddle
         g.setColor(Color.green);
@@ -73,7 +82,8 @@ public class GamePlay extends JPanel implements ActionListener, KeyListener, Ser
         //the ball
         g.setColor(Color.blue);
         g.fillOval(ballX, ballY, 20, 20);
-
+        
+        //win condition
         if (totalBricks <= 0) {
             play = false;
             ballXDir = 0;
@@ -85,7 +95,7 @@ public class GamePlay extends JPanel implements ActionListener, KeyListener, Ser
             g.drawString("Press Enter to Restart", 230, 350);
 
         }
-
+        //lose condition
         if (ballY > 570) {
             play = false;
             ballXDir = 0;
@@ -98,9 +108,13 @@ public class GamePlay extends JPanel implements ActionListener, KeyListener, Ser
 
         }
 
-        g.dispose();
+        //g.dispose();
     }
 
+    /**
+     *
+     * @param e
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         time.start();
@@ -147,11 +161,12 @@ public class GamePlay extends JPanel implements ActionListener, KeyListener, Ser
                 ballYDir = -ballYDir;
             }
 
-            if (ballX >= 670) {
+            if (ballX >= 700) {
                 ballXDir = -ballXDir;
             }
+            paddleX = flc.playGame(paddleX, ballX, ballY);
         }
-
+        
         repaint();
     }
 
@@ -163,8 +178,8 @@ public class GamePlay extends JPanel implements ActionListener, KeyListener, Ser
     public void keyPressed(KeyEvent e) {
 
         if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-            if (paddleX >= 580) {
-                paddleX = 580;
+            if (paddleX >= 600) {
+                paddleX = 600;
             } else {
                 moveRigth();
             }
@@ -180,16 +195,20 @@ public class GamePlay extends JPanel implements ActionListener, KeyListener, Ser
 
         if (e.getKeyCode() == KeyEvent.VK_ENTER) {
             if (!play) {
-                ballX = 120;
+                ballX = 130;
                 ballY = 350;
                 ballXDir = 1;
                 ballYDir = 2;
-                paddleX = 300;
+                paddleX = 310;
                 score = 0;
                 totalBricks = 21;
                 map = new MapGenerator(3, 7);
                 repaint();
             }
+        }
+
+        if (e.getKeyCode() == KeyEvent.VK_SPACE) {
+            play = true;
         }
     }
 

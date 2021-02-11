@@ -1,7 +1,5 @@
 package Akanoid;
 
-import static Akanoid.GamePlay.ballX;
-import static Akanoid.GamePlay.paddleX;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -11,7 +9,7 @@ import java.util.Scanner;
  */
 public class FLC {
 
-    private Scanner sc = new Scanner(System.in);
+    private final Scanner sc = new Scanner(System.in);
     //WEJŚCIE
     private final int input = 220;
     //WYJŚCIE
@@ -35,11 +33,11 @@ public class FLC {
     private ArrayList<Pairs> extremeRightOut = new ArrayList<>();
 
     public FLC() {
-        
+
     }
 
     /**
-     *Starts up all lists (fuzzy sets)
+     * Starts up all lists (fuzzy sets)
      */
     public void initFuzzySets() {
         zeroOut.add(new Pairs(1.0, 0));
@@ -187,25 +185,27 @@ public class FLC {
 
     /**
      *
+     * @param paddleX
+     * @param ballX
+     * @param ballY
+     * @return
      */
-    public static void steerPaddle() {
-        while (true) {
-            if (ballX >= -100 && ballX <= 100) {
-                paddleX = 300;
-            } else if (ballX >= -200 && ballX <= 0) {
-                paddleX -= 145;
-            } else if (ballX >= -300 && ballX <= -100) {
-                paddleX -= 145;
-            } else if (ballX >= -340 && ballX <= -200) {
-                paddleX -= 145;
-            } else if (ballX >= 0 && ballX <= 200) {
-                paddleX += 145;
-            } else if (ballX >= 100 && ballX <= 300) {
-                paddleX += 145;
-            } else if (ballX >= 200 && ballX <= 340) {
-                paddleX += 145;
+    public int playGame(int paddleX, int ballX, int ballY) {
+        int diffrence = (ballX + 10) - (paddleX + 50);
+        if (diffrence < 0) {
+            if (paddleX < 5) {
+                paddleX = 5;
+            } else {
+                paddleX -= diffrence;
+            }
+        } else if (diffrence > 0) {
+            if (paddleX >= 615) {
+                paddleX = 615;
+            } else {
+                paddleX += diffrence;
             }
         }
+        return paddleX;
     }
 
 }
