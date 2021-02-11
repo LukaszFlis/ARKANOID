@@ -196,13 +196,13 @@ public class FLC {
             if (paddleX < 5) {
                 paddleX = 5;
             } else {
-                paddleX -= diffrence;
+                paddleX -= 22;
             }
         } else if (diffrence > 0) {
             if (paddleX >= 615) {
                 paddleX = 615;
             } else {
-                paddleX += diffrence;
+                paddleX += 22;
             }
         }
         return paddleX;
