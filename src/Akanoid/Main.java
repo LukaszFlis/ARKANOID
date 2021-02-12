@@ -7,23 +7,17 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.beans.Beans;
-import java.io.IOException;
 import java.util.ResourceBundle;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
-import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.JSeparator;
 import javax.swing.JTabbedPane;
-import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
 import javax.swing.border.TitledBorder;
-import javax.swing.table.DefaultTableModel;
 import org.jdesktop.layout.GroupLayout;
 import org.jdesktop.layout.LayoutStyle;
 
@@ -756,7 +750,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btnInferenceActionPerformed
 
     private void btnAgregationActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnAgregationActionPerformed
-        lblAgregation.setText("MAX(ZERO;SOME_LEFT;LEFT;EXTREME_LEFT;SOME_RIGHT;RIGHT;EXTREME_RIGHT) = "
+        lblAgregation.setText("MAX(ZERO; SOME_LEFT; LEFT; EXTREME_LEFT; SOME_RIGHT; RIGHT; EXTREME_RIGHT) = "
                 + "{{0/0}; {0/-12}; {0/-24}; {0/-36}; {0.165/12}; {0.830/24}; {0/36}}");
     }//GEN-LAST:event_btnAgregationActionPerformed
 
