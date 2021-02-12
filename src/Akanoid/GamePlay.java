@@ -177,22 +177,6 @@ public class GamePlay extends JPanel implements ActionListener, KeyListener, Ser
     @Override
     public void keyPressed(KeyEvent e) {
 
-        if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-            if (paddleX >= 600) {
-                paddleX = 600;
-            } else {
-                moveRigth();
-            }
-        }
-
-        if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-            if (paddleX < 10) {
-                paddleX = 10;
-            } else {
-                moveLeft();
-            }
-        }
-
         if (e.getKeyCode() == KeyEvent.VK_ENTER) {
             if (!play) {
                 ballX = 130;
@@ -214,16 +198,6 @@ public class GamePlay extends JPanel implements ActionListener, KeyListener, Ser
 
     @Override
     public void keyReleased(KeyEvent e) {
-    }
-
-    public void moveRigth() {
-        play = true;
-        paddleX += 20;
-    }
-
-    public void moveLeft() {
-        play = true;
-        paddleX -= 20;
     }
 
     public int getTotalBricks() {

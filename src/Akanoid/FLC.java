@@ -2,6 +2,7 @@ package Akanoid;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import javax.swing.JTextField;
 
 /**
  *
@@ -33,7 +34,6 @@ public class FLC {
     private ArrayList<Pairs> extremeRightOut = new ArrayList<>();
 
     public FLC() {
-
     }
 
     /**
@@ -47,140 +47,197 @@ public class FLC {
         someRightOut.add(new Pairs(1.0, 12));
         rightOut.add(new Pairs(1.0, 24.0));
         extremeRightOut.add(new Pairs(1.0, 36.0));
-        initZero();
-        initSomeLeft();
-        initLeft();
-        initExtremeLeft();
-        initSomeRigth();
-        initRigth();
-        initExtremeRigth();
     }
 
     /**
      * Metoda iniciująca wartości wejściowego zbioru rozmytego ZERO
+     *
+     * @param u
+     * @param x
      */
-    public void initZero() {
-        System.out.println("Inicjalizacja zbioru wejściowego ZERO");
+    public void initZero(JTextField u, JTextField x) {
+        String uValues = u.getText();
+        String xValues = x.getText();
+        String[] uNumbers = uValues.split(",");
+        String[] xNumbers = xValues.split(",");
         //wartośc funkcji przynależności
-        double u = 0;
+        double fX;
         // wartość elementu zmiennej lingwistycznej RÓŻNICA
-        double x = 0;
+        double v;
 
         for (int i = 0; i < 13; i++) {
-            System.out.print("Pdaj wartość funkcji przynależności:");
-            u = sc.nextDouble();
-            System.out.print("Podaj wartość elementu zmiennejlingwistycznej:");
-            x = sc.nextDouble();
-            zero.add(new Pairs(u, x));
+            fX = Double.parseDouble(uNumbers[i]);
+            v = Double.parseDouble(xNumbers[i]);
+            zero.add(new Pairs(fX, v));
         }
     }
 
     /**
      * Metoda iniciująca wartości zbioru rozmytego SOME_LEFT
+     *
+     * @param u
+     * @param x
      */
-    public void initSomeLeft() {
-        System.out.println("Inicjalizacja zbioru wejściowego SOME_LEFT");
+    public void initSomeLeft(JTextField u, JTextField x) {
+        String uValues = u.getText();
+        String xValues = x.getText();
+        String[] uNumbers = uValues.split(",");
+        String[] xNumbers = xValues.split(",");
         //wartośc funkcji przynależności
-        double u = 0;
+        double fX;
         // wartość elementu zmiennej lingwistycznej RÓŻNICA
-        double x = 0;
+        double v;
         for (int i = 0; i < 13; i++) {
-            System.out.print("Pdaj wartość funkcji przynależności:");
-            u = sc.nextDouble();
-            System.out.print("Podaj wartość elementu zmiennejlingwistycznej:");
-            x = sc.nextDouble();
-            someLeft.add(new Pairs(u, x));
+            fX = Double.parseDouble(uNumbers[i]);
+            v = Double.parseDouble(xNumbers[i]);
+            someLeft.add(new Pairs(fX, v));
         }
     }
 
     /**
      * Metoda iniciująca wartości zbioru rozmytego LEFT
+     *
+     * @param u
+     * @param x
      */
-    public void initLeft() {
-        System.out.println("Inicjalizacja zbioru wejściowego LEFT");
+    public void initLeft(JTextField u, JTextField x) {
+        String uValues = u.getText();
+        String xValues = x.getText();
+        String[] uNumbers = uValues.split(",");
+        String[] xNumbers = xValues.split(",");
         //wartośc funkcji przynależności
-        double u = 0;
+        double fX;
         // wartość elementu zmiennej lingwistycznej RÓŻNICA
-        double x = 0;
+        double v;
         for (int i = 0; i < 13; i++) {
-            System.out.print("Pdaj wartość funkcji przynależności:");
-            u = sc.nextDouble();
-            System.out.print("Podaj wartość elementu zmiennejlingwistycznej:");
-            x = sc.nextDouble();
-            left.add(new Pairs(u, x));
+            fX = Double.parseDouble(uNumbers[i]);
+            v = Double.parseDouble(xNumbers[i]);
+            left.add(new Pairs(fX, v));
         }
     }
 
     /**
      * Metoda iniciująca wartości zbioru rozmytego EXTREME_LEFT
+     *
+     * @param u
+     * @param x
      */
-    public void initExtremeLeft() {
-        System.out.println("Inicjalizacja zbioru wejściowego EXTREME_LEFT");
+    public void initExtremeLeft(JTextField u, JTextField x) {
+        String uValues = u.getText();
+        String xValues = x.getText();
+        String[] uNumbers = uValues.split(",");
+        String[] xNumbers = xValues.split(",");
         //wartośc funkcji przynależności
-        double u = 0;
+        double fX;
         // wartość elementu zmiennej lingwistycznej RÓŻNICA
-        double x = 0;
+        double v;
         for (int i = 0; i < 7; i++) {
-            System.out.print("Pdaj wartość funkcji przynależności:");
-            u = sc.nextDouble();
-            System.out.print("Podaj wartość elementu zmiennejlingwistycznej:");
-            x = sc.nextDouble();
-            extremeLeft.add(new Pairs(u, x));
+            fX = Double.parseDouble(uNumbers[i]);
+            v = Double.parseDouble(xNumbers[i]);
+            extremeLeft.add(new Pairs(fX, v));
         }
     }
 
     /**
      * Metoda iniciująca wartości zbioru rozmytego SOME_Right
+     *
+     * @param u
+     * @param x
      */
-    public void initSomeRigth() {
-        System.out.println("Inicjalizacja zbioru wejściowego SOME_RIGHT");
+    public void initSomeRigth(JTextField u, JTextField x) {
+        String uValues = u.getText();
+        String xValues = x.getText();
+        String[] uNumbers = uValues.split(",");
+        String[] xNumbers = xValues.split(",");
         //wartośc funkcji przynależności
-        double u = 0;
+        double fX;
         // wartość elementu zmiennej lingwistycznej RÓŻNICA
-        double x = 0;
+        double v;
         for (int i = 0; i < 13; i++) {
-            System.out.print("Pdaj wartość funkcji przynależności:");
-            u = sc.nextDouble();
-            System.out.print("Podaj wartość elementu zmiennejlingwistycznej:");
-            x = sc.nextDouble();
-            someRight.add(new Pairs(u, x));
+            fX = Double.parseDouble(uNumbers[i]);
+            v = Double.parseDouble(xNumbers[i]);
+            someRight.add(new Pairs(fX, v));
         }
     }
 
     /**
      * Metoda iniciująca wartości zbioru rozmytego RIGHT
+     *
+     * @param u
+     * @param x
      */
-    public void initRigth() {
-        System.out.println("Inicjalizacja zbioru wejściowego RIGHT");
+    public void initRigth(JTextField u, JTextField x) {
+        String uValues = u.getText();
+        String xValues = x.getText();
+        String[] uNumbers = uValues.split(",");
+        String[] xNumbers = xValues.split(",");
         //wartośc funkcji przynależności
-        double u = 0;
+        double fX;
         // wartość elementu zmiennej lingwistycznej RÓŻNICA
-        double x = 0;
+        double v;
         for (int i = 0; i < 13; i++) {
-            System.out.print("Pdaj wartość funkcji przynależności:");
-            u = sc.nextDouble();
-            System.out.print("Podaj wartość elementu zmiennejlingwistycznej:");
-            x = sc.nextDouble();
-            right.add(new Pairs(u, x));
+            fX = Double.parseDouble(uNumbers[i]);
+            v = Double.parseDouble(xNumbers[i]);
+            right.add(new Pairs(fX, v));
         }
     }
 
     /**
      * Metoda iniciująca wartości zbioru rozmytego EXTREME_RIGHT
+     *
+     * @param u
+     * @param x
      */
-    public void initExtremeRigth() {
-        System.out.println("Inicjalizacja zbioru wejściowego EXTREME_RIGHT");
+    public void initExtremeRigth(JTextField u, JTextField x) {
+        String uValues = u.getText();
+        String xValues = x.getText();
+        String[] uNumbers = uValues.split(",");
+        String[] xNumbers = xValues.split(",");
         //wartośc funkcji przynależności
-        double u = 0;
+        double fX;
         // wartość elementu zmiennej lingwistycznej RÓŻNICA
-        double x = 0;
+        double v;
         for (int i = 0; i < 7; i++) {
-            System.out.print("Pdaj wartość funkcji przynależności:");
-            u = sc.nextDouble();
-            System.out.print("Podaj wartość elementu zmiennejlingwistycznej:");
-            x = sc.nextDouble();
-            extremeRight.add(new Pairs(u, x));
+            fX = Double.parseDouble(uNumbers[i]);
+            v = Double.parseDouble(xNumbers[i]);
+            extremeRight.add(new Pairs(fX, v));
         }
+    }
+
+    /**
+     *
+     * @param list1
+     * @param list2
+     * @return 
+     */
+    public ArrayList<Pairs> calcMin(ArrayList<Pairs> list1, ArrayList<Pairs> list2) {
+        ArrayList<Pairs> result = new ArrayList<>();
+        for (int i = 0; i < list1.size(); i++) {
+            if (list1.get(i).getU() < list2.get(i).getU()) {
+                result.add(list1.get(i));
+            } else if (list1.get(i).getU() > list2.get(i).getU()) {
+                result.add(list2.get(i));
+            }
+        }
+        return result;
+    }
+
+    /**
+     *
+     * @param list1
+     * @param list2
+     * @return 
+     */
+    public ArrayList<Pairs> calcMax(ArrayList<Pairs> list1, ArrayList<Pairs> list2) {
+        ArrayList<Pairs> result = new ArrayList<>();
+        for (int i = 0; i < list1.size(); i++) {
+            if (list1.get(i).getU() > list2.get(i).getU()) {
+                result.add(list1.get(i));
+            } else if (list1.get(i).getU() < list2.get(i).getU()) {
+                result.add(list2.get(i));
+            }
+        }
+        return result;
     }
 
     /**
