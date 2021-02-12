@@ -118,20 +118,20 @@ public class Main extends javax.swing.JFrame {
         ResourceBundle bundle = ResourceBundle.getBundle("Akanoid/Bundle"); // NOI18N
         setTitle(bundle.getString("Main.title")); // NOI18N
         setLocationByPlatform(true);
-        setMaximumSize(new Dimension(750, 650));
-        setPreferredSize(new Dimension(730, 630));
+        setMaximumSize(new Dimension(900, 700));
+        setPreferredSize(new Dimension(900, 700));
         setResizable(false);
-        setSize(new Dimension(730, 610));
+        setSize(new Dimension(850, 700));
 
         jTabbedPane1.setFocusable(false);
 
         GroupLayout gamePlay2Layout = new GroupLayout(gamePlay2);
         gamePlay2.setLayout(gamePlay2Layout);
         gamePlay2Layout.setHorizontalGroup(gamePlay2Layout.createParallelGroup(GroupLayout.LEADING)
-            .add(0, 725, Short.MAX_VALUE)
+            .add(0, 894, Short.MAX_VALUE)
         );
         gamePlay2Layout.setVerticalGroup(gamePlay2Layout.createParallelGroup(GroupLayout.LEADING)
-            .add(0, 572, Short.MAX_VALUE)
+            .add(0, 628, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab(bundle.getString("Main.gamePlay2.TabConstraints.tabTitle"), gamePlay2); // NOI18N
@@ -180,7 +180,7 @@ public class Main extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(jPanel4Layout.createParallelGroup(GroupLayout.LEADING)
             .add(jPanel4Layout.createSequentialGroup()
-                .add(107, 107, 107)
+                .add(183, 183, 183)
                 .add(jPanel4Layout.createParallelGroup(GroupLayout.TRAILING, false)
                     .add(GroupLayout.LEADING, jLabel9, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .add(jLabel8, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -189,7 +189,7 @@ public class Main extends javax.swing.JFrame {
                     .add(GroupLayout.LEADING, jLabel5, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .add(GroupLayout.LEADING, jLabel6, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .add(GroupLayout.LEADING, jLabel7, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(82, Short.MAX_VALUE))
+                .add(168, 168, 168))
         );
         jPanel4Layout.setVerticalGroup(jPanel4Layout.createParallelGroup(GroupLayout.LEADING)
             .add(jPanel4Layout.createSequentialGroup()
@@ -205,7 +205,7 @@ public class Main extends javax.swing.JFrame {
                 .addPreferredGap(LayoutStyle.RELATED)
                 .add(jLabel9)
                 .addPreferredGap(LayoutStyle.RELATED)
-                .add(jLabel23, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .add(jLabel23, GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE))
         );
 
         jPanel5.setBackground(new Color(153, 153, 255));
@@ -254,7 +254,7 @@ public class Main extends javax.swing.JFrame {
         jPanel5Layout.setVerticalGroup(jPanel5Layout.createParallelGroup(GroupLayout.LEADING)
             .add(jPanel5Layout.createSequentialGroup()
                 .add(txtFieldZeroU, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.RELATED)
+                .addPreferredGap(LayoutStyle.UNRELATED)
                 .add(txtFieldZeroX, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -384,21 +384,18 @@ public class Main extends javax.swing.JFrame {
         GroupLayout jPanel1Layout = new GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(jPanel1Layout.createParallelGroup(GroupLayout.LEADING)
-            .add(jPanel1Layout.createSequentialGroup()
-                .add(jPanel1Layout.createParallelGroup(GroupLayout.LEADING)
-                    .add(jPanel6, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .add(jPanel5, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .add(jPanel4, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+            .add(jPanel5, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .add(jPanel6, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .add(jPanel4, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(jPanel1Layout.createParallelGroup(GroupLayout.LEADING)
             .add(jPanel1Layout.createSequentialGroup()
-                .add(jPanel5, GroupLayout.PREFERRED_SIZE, 74, GroupLayout.PREFERRED_SIZE)
+                .add(jPanel5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(LayoutStyle.RELATED)
-                .add(jPanel6, GroupLayout.PREFERRED_SIZE, 309, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.UNRELATED)
-                .add(jPanel4, GroupLayout.PREFERRED_SIZE, 173, GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .add(jPanel6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(LayoutStyle.RELATED)
+                .add(jPanel4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab(bundle.getString("Main.jPanel1.TabConstraints.tabTitle"), jPanel1); // NOI18N
@@ -518,7 +515,7 @@ public class Main extends javax.swing.JFrame {
                         .add(jLabel13, GroupLayout.PREFERRED_SIZE, 335, GroupLayout.PREFERRED_SIZE))
                     .add(jPanel7Layout.createSequentialGroup()
                         .add(jLabel15, GroupLayout.PREFERRED_SIZE, 335, GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(LayoutStyle.RELATED, 13, Short.MAX_VALUE)
+                        .addPreferredGap(LayoutStyle.RELATED, 192, Short.MAX_VALUE)
                         .add(jLabel16, GroupLayout.PREFERRED_SIZE, 335, GroupLayout.PREFERRED_SIZE))
                     .add(jPanel7Layout.createSequentialGroup()
                         .add(jLabel14, GroupLayout.PREFERRED_SIZE, 335, GroupLayout.PREFERRED_SIZE)
@@ -570,25 +567,26 @@ public class Main extends javax.swing.JFrame {
             .add(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
                 .add(jPanel8Layout.createParallelGroup(GroupLayout.LEADING)
-                    .add(jLabel21, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .add(jLabel20, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .add(jLabel20, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(jLabel21, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
-            .add(GroupLayout.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .add(jPanel8Layout.createSequentialGroup()
+                .add(310, 310, 310)
                 .add(btnAgregation, GroupLayout.PREFERRED_SIZE, 261, GroupLayout.PREFERRED_SIZE)
-                .add(214, 214, 214))
+                .addContainerGap())
         );
         jPanel8Layout.setVerticalGroup(jPanel8Layout.createParallelGroup(GroupLayout.LEADING)
             .add(jPanel8Layout.createSequentialGroup()
                 .add(btnAgregation, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(LayoutStyle.UNRELATED)
-                .add(jLabel20, GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
-                .add(4, 4, 4)
+                .add(jLabel20, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+                .add(18, 18, 18)
                 .add(jLabel21, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         jPanel9.setBackground(new Color(0, 51, 204));
+        jPanel9.setBorder(BorderFactory.createTitledBorder(null, bundle.getString("Main.jPanel9.border.title"), TitledBorder.LEFT, TitledBorder.TOP, new Font("Times New Roman", 1, 12))); // NOI18N
         jPanel9.setForeground(new Color(255, 255, 255));
 
         btnDeFuzzy.setText(bundle.getString("Main.btnDeFuzzy.text")); // NOI18N
@@ -600,43 +598,40 @@ public class Main extends javax.swing.JFrame {
         jPanel9Layout.setHorizontalGroup(jPanel9Layout.createParallelGroup(GroupLayout.LEADING)
             .add(jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
-                .add(jPanel9Layout.createParallelGroup(GroupLayout.LEADING)
-                    .add(jLabel22, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .add(GroupLayout.TRAILING, jPanel9Layout.createSequentialGroup()
-                        .add(0, 0, Short.MAX_VALUE)
-                        .add(btnDeFuzzy, GroupLayout.PREFERRED_SIZE, 268, GroupLayout.PREFERRED_SIZE)
-                        .add(209, 209, 209)))
+                .add(jLabel22, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+            .add(jPanel9Layout.createSequentialGroup()
+                .add(313, 313, 313)
+                .add(btnDeFuzzy, GroupLayout.PREFERRED_SIZE, 268, GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(jPanel9Layout.createParallelGroup(GroupLayout.LEADING)
             .add(jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
                 .add(btnDeFuzzy)
-                .add(18, 18, 18)
-                .add(jLabel22, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addPreferredGap(LayoutStyle.UNRELATED)
+                .add(jLabel22, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         GroupLayout jPanel3Layout = new GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(jPanel3Layout.createParallelGroup(GroupLayout.LEADING)
-            .add(jPanel3Layout.createSequentialGroup()
-                .add(jPanel3Layout.createParallelGroup(GroupLayout.LEADING)
-                    .add(GroupLayout.TRAILING, jPanel7, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .add(jPanel8, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .add(jPanel9, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .add(jPanel2, GroupLayout.DEFAULT_SIZE, 715, Short.MAX_VALUE))
-                .addContainerGap())
+            .add(jPanel2, GroupLayout.DEFAULT_SIZE, 894, Short.MAX_VALUE)
+            .add(jPanel7, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .add(jPanel8, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .add(jPanel9, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(jPanel3Layout.createParallelGroup(GroupLayout.LEADING)
             .add(jPanel3Layout.createSequentialGroup()
                 .add(jPanel2, GroupLayout.PREFERRED_SIZE, 169, GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(LayoutStyle.RELATED)
-                .add(jPanel7, GroupLayout.PREFERRED_SIZE, 146, GroupLayout.PREFERRED_SIZE)
+                .add(jPanel7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(LayoutStyle.RELATED)
-                .add(jPanel8, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(LayoutStyle.RELATED)
-                .add(jPanel9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                .add(jPanel8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(LayoutStyle.UNRELATED)
+                .add(jPanel9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                .add(43, 43, 43))
         );
 
         jTabbedPane1.addTab(bundle.getString("Main.jPanel3.TabConstraints.tabTitle"), jPanel3); // NOI18N
@@ -647,11 +642,11 @@ public class Main extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(layout.createParallelGroup(GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
-                .add(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 730, GroupLayout.PREFERRED_SIZE)
+                .add(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 899, GroupLayout.PREFERRED_SIZE)
                 .add(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(layout.createParallelGroup(GroupLayout.LEADING)
-            .add(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 600, GroupLayout.PREFERRED_SIZE)
+            .add(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 656, GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
