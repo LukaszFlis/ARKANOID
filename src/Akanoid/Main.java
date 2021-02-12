@@ -99,20 +99,19 @@ public class Main extends javax.swing.JFrame {
         lblExtremRightFuzzy = new JLabel();
         jPanel7 = new JPanel();
         btnInference = new JButton();
-        jLabel13 = new JLabel();
-        jLabel14 = new JLabel();
-        jLabel15 = new JLabel();
-        jLabel16 = new JLabel();
-        jLabel17 = new JLabel();
-        jLabel18 = new JLabel();
-        jLabel19 = new JLabel();
+        lblR1 = new JLabel();
+        lblR2 = new JLabel();
+        lblR4 = new JLabel();
+        lblR5 = new JLabel();
+        lblR3 = new JLabel();
+        lblR6 = new JLabel();
+        lblR7 = new JLabel();
         jPanel8 = new JPanel();
         btnAgregation = new JButton();
-        jLabel20 = new JLabel();
-        jLabel21 = new JLabel();
+        lblAgregation = new JLabel();
         jPanel9 = new JPanel();
         btnDeFuzzy = new JButton();
-        jLabel22 = new JLabel();
+        lblDeFuzzy = new JLabel();
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         ResourceBundle bundle = ResourceBundle.getBundle("Akanoid/Bundle"); // NOI18N
@@ -509,27 +508,32 @@ public class Main extends javax.swing.JFrame {
         btnInference.setText(bundle.getString("Main.btnInference.text")); // NOI18N
         btnInference.setHorizontalTextPosition(SwingConstants.CENTER);
         btnInference.setPreferredSize(new Dimension(192, 25));
+        btnInference.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btnInferenceActionPerformed(evt);
+            }
+        });
 
-        jLabel13.setForeground(new Color(255, 255, 255));
-        jLabel13.setText(bundle.getString("Main.jLabel13.text")); // NOI18N
+        lblR1.setForeground(new Color(255, 255, 255));
+        lblR1.setText(bundle.getString("Main.lblR1.text")); // NOI18N
 
-        jLabel14.setForeground(new Color(255, 255, 255));
-        jLabel14.setText(bundle.getString("Main.jLabel14.text")); // NOI18N
+        lblR2.setForeground(new Color(255, 255, 255));
+        lblR2.setText(bundle.getString("Main.lblR2.text")); // NOI18N
 
-        jLabel15.setForeground(new Color(255, 255, 255));
-        jLabel15.setText(bundle.getString("Main.jLabel15.text")); // NOI18N
+        lblR4.setForeground(new Color(255, 255, 255));
+        lblR4.setText(bundle.getString("Main.lblR4.text")); // NOI18N
 
-        jLabel16.setForeground(new Color(255, 255, 255));
-        jLabel16.setText(bundle.getString("Main.jLabel16.text")); // NOI18N
+        lblR5.setForeground(new Color(255, 255, 255));
+        lblR5.setText(bundle.getString("Main.lblR5.text")); // NOI18N
 
-        jLabel17.setForeground(new Color(255, 255, 255));
-        jLabel17.setText(bundle.getString("Main.jLabel17.text")); // NOI18N
+        lblR3.setForeground(new Color(255, 255, 255));
+        lblR3.setText(bundle.getString("Main.lblR3.text")); // NOI18N
 
-        jLabel18.setForeground(new Color(255, 255, 255));
-        jLabel18.setText(bundle.getString("Main.jLabel18.text")); // NOI18N
+        lblR6.setForeground(new Color(255, 255, 255));
+        lblR6.setText(bundle.getString("Main.lblR6.text")); // NOI18N
 
-        jLabel19.setForeground(new Color(255, 255, 255));
-        jLabel19.setText(bundle.getString("Main.jLabel19.text")); // NOI18N
+        lblR7.setForeground(new Color(255, 255, 255));
+        lblR7.setText(bundle.getString("Main.lblR7.text")); // NOI18N
 
         GroupLayout jPanel7Layout = new GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -540,38 +544,38 @@ public class Main extends javax.swing.JFrame {
                     .add(jPanel7Layout.createSequentialGroup()
                         .add(btnInference, GroupLayout.PREFERRED_SIZE, 262, GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(LayoutStyle.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .add(jLabel13, GroupLayout.PREFERRED_SIZE, 335, GroupLayout.PREFERRED_SIZE))
+                        .add(lblR1, GroupLayout.PREFERRED_SIZE, 335, GroupLayout.PREFERRED_SIZE))
                     .add(jPanel7Layout.createSequentialGroup()
-                        .add(jLabel15, GroupLayout.PREFERRED_SIZE, 335, GroupLayout.PREFERRED_SIZE)
+                        .add(lblR4, GroupLayout.PREFERRED_SIZE, 335, GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(LayoutStyle.RELATED, 192, Short.MAX_VALUE)
-                        .add(jLabel16, GroupLayout.PREFERRED_SIZE, 335, GroupLayout.PREFERRED_SIZE))
+                        .add(lblR5, GroupLayout.PREFERRED_SIZE, 335, GroupLayout.PREFERRED_SIZE))
                     .add(jPanel7Layout.createSequentialGroup()
-                        .add(jLabel14, GroupLayout.PREFERRED_SIZE, 335, GroupLayout.PREFERRED_SIZE)
+                        .add(lblR2, GroupLayout.PREFERRED_SIZE, 335, GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(LayoutStyle.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .add(jLabel17, GroupLayout.PREFERRED_SIZE, 335, GroupLayout.PREFERRED_SIZE))
+                        .add(lblR3, GroupLayout.PREFERRED_SIZE, 335, GroupLayout.PREFERRED_SIZE))
                     .add(jPanel7Layout.createSequentialGroup()
-                        .add(jLabel18, GroupLayout.PREFERRED_SIZE, 335, GroupLayout.PREFERRED_SIZE)
+                        .add(lblR6, GroupLayout.PREFERRED_SIZE, 335, GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(LayoutStyle.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .add(jLabel19, GroupLayout.PREFERRED_SIZE, 335, GroupLayout.PREFERRED_SIZE)))
+                        .add(lblR7, GroupLayout.PREFERRED_SIZE, 335, GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(jPanel7Layout.createParallelGroup(GroupLayout.LEADING)
             .add(jPanel7Layout.createSequentialGroup()
                 .add(jPanel7Layout.createParallelGroup(GroupLayout.LEADING, false)
                     .add(btnInference, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .add(jLabel13, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .add(lblR1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(LayoutStyle.RELATED)
                 .add(jPanel7Layout.createParallelGroup(GroupLayout.BASELINE)
-                    .add(jLabel14, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-                    .add(jLabel17, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
+                    .add(lblR2, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+                    .add(lblR3, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(LayoutStyle.RELATED)
                 .add(jPanel7Layout.createParallelGroup(GroupLayout.LEADING)
-                    .add(jLabel15, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-                    .add(jLabel16, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
+                    .add(lblR4, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+                    .add(lblR5, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(LayoutStyle.RELATED)
                 .add(jPanel7Layout.createParallelGroup(GroupLayout.BASELINE)
-                    .add(jLabel18, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-                    .add(jLabel19, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
+                    .add(lblR6, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+                    .add(lblR7, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -582,12 +586,14 @@ public class Main extends javax.swing.JFrame {
         btnAgregation.setText(bundle.getString("Main.btnAgregation.text")); // NOI18N
         btnAgregation.setHorizontalTextPosition(SwingConstants.CENTER);
         btnAgregation.setPreferredSize(new Dimension(192, 25));
+        btnAgregation.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btnAgregationActionPerformed(evt);
+            }
+        });
 
-        jLabel20.setForeground(new Color(255, 255, 255));
-        jLabel20.setText(bundle.getString("Main.jLabel20.text")); // NOI18N
-
-        jLabel21.setForeground(new Color(255, 255, 255));
-        jLabel21.setText(bundle.getString("Main.jLabel21.text")); // NOI18N
+        lblAgregation.setForeground(new Color(255, 255, 255));
+        lblAgregation.setText(bundle.getString("Main.lblAgregation.text")); // NOI18N
 
         GroupLayout jPanel8Layout = new GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -596,9 +602,7 @@ public class Main extends javax.swing.JFrame {
                 .add(jPanel8Layout.createParallelGroup(GroupLayout.LEADING)
                     .add(jPanel8Layout.createSequentialGroup()
                         .addContainerGap()
-                        .add(jPanel8Layout.createParallelGroup(GroupLayout.LEADING)
-                            .add(jLabel20, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .add(jLabel21, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .add(lblAgregation, GroupLayout.DEFAULT_SIZE, 862, Short.MAX_VALUE))
                     .add(jPanel8Layout.createSequentialGroup()
                         .add(310, 310, 310)
                         .add(btnAgregation, GroupLayout.PREFERRED_SIZE, 261, GroupLayout.PREFERRED_SIZE)))
@@ -608,10 +612,8 @@ public class Main extends javax.swing.JFrame {
             .add(jPanel8Layout.createSequentialGroup()
                 .add(btnAgregation, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(LayoutStyle.UNRELATED)
-                .add(jLabel20, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-                .add(18, 18, 18)
-                .add(jLabel21, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .add(lblAgregation, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel9.setBackground(new Color(0, 51, 204));
@@ -619,15 +621,23 @@ public class Main extends javax.swing.JFrame {
         jPanel9.setForeground(new Color(255, 255, 255));
 
         btnDeFuzzy.setText(bundle.getString("Main.btnDeFuzzy.text")); // NOI18N
+        btnDeFuzzy.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btnDeFuzzyActionPerformed(evt);
+            }
+        });
 
-        jLabel22.setText(bundle.getString("Main.jLabel22.text")); // NOI18N
+        lblDeFuzzy.setForeground(new Color(255, 255, 255));
+        lblDeFuzzy.setHorizontalAlignment(SwingConstants.CENTER);
+        lblDeFuzzy.setText(bundle.getString("Main.lblDeFuzzy.text")); // NOI18N
+        lblDeFuzzy.setHorizontalTextPosition(SwingConstants.CENTER);
 
         GroupLayout jPanel9Layout = new GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(jPanel9Layout.createParallelGroup(GroupLayout.LEADING)
             .add(jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
-                .add(jLabel22, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .add(lblDeFuzzy, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .add(jPanel9Layout.createSequentialGroup()
                 .add(313, 313, 313)
@@ -636,11 +646,10 @@ public class Main extends javax.swing.JFrame {
         );
         jPanel9Layout.setVerticalGroup(jPanel9Layout.createParallelGroup(GroupLayout.LEADING)
             .add(jPanel9Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .add(btnDeFuzzy)
                 .addPreferredGap(LayoutStyle.UNRELATED)
-                .add(jLabel22, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .add(lblDeFuzzy, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
         );
 
         GroupLayout jPanel3Layout = new GroupLayout(jPanel3);
@@ -658,9 +667,9 @@ public class Main extends javax.swing.JFrame {
                 .add(jPanel7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(LayoutStyle.RELATED)
                 .add(jPanel8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.UNRELATED)
+                .addPreferredGap(LayoutStyle.RELATED)
                 .add(jPanel9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .add(43, 43, 43))
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab(bundle.getString("Main.jPanel3.TabConstraints.tabTitle"), jPanel3); // NOI18N
@@ -736,6 +745,26 @@ public class Main extends javax.swing.JFrame {
         lblExtremRightFuzzy.setText("EXTREME_RIGHT (220) = " + flc.fuzzyfication(flc.getExtremeRight()));
     }//GEN-LAST:event_btnFuzzyActionPerformed
 
+    private void btnInferenceActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnInferenceActionPerformed
+        lblR1.setText("R1 MIN(0, ZERO) = " + String.valueOf(flc.inference(0, flc.getZeroOut())));
+        lblR2.setText("R2 MIN(0, SOME_LEFT) = " + String.valueOf(flc.inference(0, flc.getSomeLeftOut())));
+        lblR3.setText("R3 MIN(0, LEFT) = " + String.valueOf(flc.inference(0, flc.getLeftOut())));
+        lblR4.setText("R4 MIN(0, EXTREME_LEFT) = " + String.valueOf(flc.inference(0, flc.getExtremeLefOut())));
+        lblR5.setText("R5 MIN(0.165, SOME_RIGHT) = " + String.valueOf(flc.inference(0.165, flc.getSomeRightOut())));
+        lblR6.setText("R6 MIN(0.830, RIGHT) = " + String.valueOf(flc.inference(0, flc.getRightOut())));
+        lblR7.setText("R7 MIN(0,EXTREME_RIGHT) = " + String.valueOf(flc.inference(0, flc.getExtremeRightOut())));
+    }//GEN-LAST:event_btnInferenceActionPerformed
+
+    private void btnAgregationActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnAgregationActionPerformed
+        lblAgregation.setText("MAX(ZERO;SOME_LEFT;LEFT;EXTREME_LEFT;SOME_RIGHT;RIGHT;EXTREME_RIGHT) = "
+                + "{{0/0}; {0/-12}; {0/-24}; {0/-36}; {0.165/12}; {0.830/24}; {0/36}}");
+    }//GEN-LAST:event_btnAgregationActionPerformed
+
+    private void btnDeFuzzyActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnDeFuzzyActionPerformed
+        lblDeFuzzy.setText("Y = 0 * 0 + 0 * (-12) + 0 * (-24) + 0 * (-36) + 0.165 * 12 + 0.830 * 24 + 0 * 36 / " +
+                "0 + 0 + 0 + 0 + 0.165 + 0.830 + 0 = 22");
+    }//GEN-LAST:event_btnDeFuzzyActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -779,16 +808,6 @@ public class Main extends javax.swing.JFrame {
     private JButton btnZeroIn;
     private GamePlay gamePlay2;
     private JLabel jLabel1;
-    private JLabel jLabel13;
-    private JLabel jLabel14;
-    private JLabel jLabel15;
-    private JLabel jLabel16;
-    private JLabel jLabel17;
-    private JLabel jLabel18;
-    private JLabel jLabel19;
-    private JLabel jLabel20;
-    private JLabel jLabel21;
-    private JLabel jLabel22;
     private JLabel jLabel23;
     private JLabel jLabel5;
     private JLabel jLabel6;
@@ -811,12 +830,21 @@ public class Main extends javax.swing.JFrame {
     private JSeparator jSeparator5;
     private JSeparator jSeparator6;
     private JTabbedPane jTabbedPane1;
+    private JLabel lblAgregation;
+    private JLabel lblDeFuzzy;
     private JLabel lblExtremRightFuzzy;
     private JLabel lblExtremeLeft;
     private JLabel lblExtremeLeftFuzzy;
     private JLabel lblExtremeRight;
     private JLabel lblLeft;
     private JLabel lblLeftFuzzy;
+    private JLabel lblR1;
+    private JLabel lblR2;
+    private JLabel lblR3;
+    private JLabel lblR4;
+    private JLabel lblR5;
+    private JLabel lblR6;
+    private JLabel lblR7;
     private JLabel lblRight;
     private JLabel lblRightFuzzy;
     private JLabel lblSomeLeft;

@@ -10,11 +10,7 @@ import javax.swing.JTextField;
  */
 public class FLC {
 
-    //WEJŚCIE
-    private final int input = 220;
-    //WYJŚCIE
-    private final int output = -22;
-    //wejściowe zbiory rozmyte zmiennej lingwistycznej różnica
+    //fuzzy sets of linguistic variable DIFFERENCE
     private ArrayList<Pairs> zero = new ArrayList<>();
     private ArrayList<Pairs> someLeft = new ArrayList<>();
     private ArrayList<Pairs> left = new ArrayList<>();
@@ -23,7 +19,7 @@ public class FLC {
     private ArrayList<Pairs> right = new ArrayList<>();
     private ArrayList<Pairs> extremeRight = new ArrayList<>();
 
-    //weyjściowe zbiory rozmyte zmiennej lingwistycznej WYCHYLENIE
+    //fuzzy sets of liguistic variable SWING
     private ArrayList<Pairs> zeroOut = new ArrayList<>();
     private ArrayList<Pairs> someLeftOut = new ArrayList<>();
     private ArrayList<Pairs> leftOut = new ArrayList<>();
@@ -39,13 +35,13 @@ public class FLC {
      * Starts up all lists (fuzzy sets)
      */
     public void initFuzzySets() {
-        zeroOut.add(new Pairs(1.0, 0));
-        someLeftOut.add(new Pairs(1.0, -12.0));
-        leftOut.add(new Pairs(1.0, -24.0));
-        extremeLefOut.add(new Pairs(1.0, -36.0));
-        someRightOut.add(new Pairs(1.0, 12));
-        rightOut.add(new Pairs(1.0, 24.0));
-        extremeRightOut.add(new Pairs(1.0, 36.0));
+        zeroOut.add(new Pairs(1, 0));
+        someLeftOut.add(new Pairs(1, -12));
+        leftOut.add(new Pairs(1, -24));
+        extremeLefOut.add(new Pairs(1, -36));
+        someRightOut.add(new Pairs(1, 12));
+        rightOut.add(new Pairs(1, 24));
+        extremeRightOut.add(new Pairs(1, 36));
     }
 
     /**
@@ -296,9 +292,10 @@ public class FLC {
     }
 
     /**
-     *  Fuzzyfication for input value Difference = 220
+     * Fuzzyfication for input value Difference = 220
+     *
      * @param list fuzzy set
-     * @return value of membership function for fuzzy set element equal to input  
+     * @return value of membership function for fuzzy set element equal to input
      */
     public String fuzzyfication(ArrayList<Pairs> list) {
         String result = "";
@@ -310,6 +307,61 @@ public class FLC {
         return result;
     }
 
+    /**
+     *
+     * @param in value of set after fuzzyfication
+     * @param list fuzzy set
+     * @return new set after  
+     */
+    public StringBuilder inference(double in, ArrayList<Pairs> list) {
+        StringBuilder result = new StringBuilder();
+        result.append("{");
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getU() > in) {
+                result.append(String.valueOf(in)).append("/").append(String.valueOf(list.get(i).getX()));
+                
+            } else {
+                result.append(String.valueOf(list.get(i).getU())).append("/").append(String.valueOf(list.get(i).getX()));
+            }
+        }
+        result.append("}");
+        return result;
+    }
+    
+    /*public StringBuilder agregation (JLabel r1, JLabel r2,JLabel r3,JLabel r4, JLabel r5, JLabel r6, JLabel r7){
+        StringBuilder result = new StringBuilder();
+        String zero = r1.getText();
+        String  zeroCut= zero.substring(0, zero.length()-1);
+        String[] zeroVal = zeroCut.split("/");
+        String sLeft = r2.getText();
+        String  sLeftCut= sLeft.substring(0, sLeft.length()-1);
+        String[] sLeftVal = sLeftCut.split("/");
+        String left = r3.getText();
+        String  leftCut= left.substring(0, left.length()-1);
+        String[] leftVal = leftCut.split("/");
+        String eLeft = r4.getText();
+        String  eLeftCut= eLeft.substring(0, eLeft.length()-1);
+        String[] eLeftVal = eLeftCut.split("/");
+        String sRight = r5.getText();
+        String  sRightCut= sRight.substring(0, sRight.length()-1);
+        String[] sRightVal = sRightCut.split("/");
+        String right = r6.getText();
+        String  rightCut= right.substring(0, right.length()-1);
+        String[] righttVal = rightCut.split("/");
+        String eRight = r7.getText();
+        String  eRightCut= eRight.substring(0, eRight.length()-1);
+        String[] eRightVal = eRightCut.split("/");
+        
+        for (int i = 0; i < 7; i++) {
+            
+        }
+        return result;
+    }*/
+    
+    //public String defuzzyfication(){
+        
+    //}
+            
     /**
      *
      * @param paddleX
@@ -362,5 +414,32 @@ public class FLC {
     public ArrayList<Pairs> getExtremeRight() {
         return extremeRight;
     }
-    
+
+    public ArrayList<Pairs> getZeroOut() {
+        return zeroOut;
+    }
+
+    public ArrayList<Pairs> getSomeLeftOut() {
+        return someLeftOut;
+    }
+
+    public ArrayList<Pairs> getLeftOut() {
+        return leftOut;
+    }
+
+    public ArrayList<Pairs> getExtremeLefOut() {
+        return extremeLefOut;
+    }
+
+    public ArrayList<Pairs> getSomeRightOut() {
+        return someRightOut;
+    }
+
+    public ArrayList<Pairs> getRightOut() {
+        return rightOut;
+    }
+
+    public ArrayList<Pairs> getExtremeRightOut() {
+        return extremeRightOut;
+    }
 }
