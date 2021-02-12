@@ -64,8 +64,8 @@ public class Main extends javax.swing.JFrame {
         jLabel9 = new JLabel();
         jLabel23 = new JLabel();
         jPanel5 = new JPanel();
-        txtFieldZeroU = new JTextField();
-        txtFieldZeroX = new JTextField();
+        txtFieldSetU = new JTextField();
+        txtFieldSetX = new JTextField();
         jPanel6 = new JPanel();
         btnZeroIn = new JButton();
         btnSomeLeft = new JButton();
@@ -211,33 +211,33 @@ public class Main extends javax.swing.JFrame {
         jPanel5.setBackground(new Color(153, 153, 255));
         jPanel5.setBorder(BorderFactory.createTitledBorder(null, bundle.getString("Main.jPanel5.border.title"), TitledBorder.LEFT, TitledBorder.TOP, new Font("Times New Roman", 0, 12))); // NOI18N
 
-        txtFieldZeroU.setFont(new Font("Times New Roman", 0, 14)); // NOI18N
-        txtFieldZeroU.setHorizontalAlignment(JTextField.CENTER);
-        txtFieldZeroU.setText(bundle.getString("Main.txtFieldZeroU.text")); // NOI18N
-        txtFieldZeroU.setToolTipText(bundle.getString("Main.txtFieldZeroU.toolTipText")); // NOI18N
-        txtFieldZeroU.addMouseListener(new MouseAdapter() {
+        txtFieldSetU.setFont(new Font("Times New Roman", 0, 14)); // NOI18N
+        txtFieldSetU.setHorizontalAlignment(JTextField.CENTER);
+        txtFieldSetU.setText(bundle.getString("Main.txtFieldSetU.text")); // NOI18N
+        txtFieldSetU.setToolTipText(bundle.getString("Main.txtFieldSetU.toolTipText")); // NOI18N
+        txtFieldSetU.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent evt) {
-                txtFieldZeroUMouseClicked(evt);
+                txtFieldSetUMouseClicked(evt);
             }
         });
-        txtFieldZeroU.addActionListener(new ActionListener() {
+        txtFieldSetU.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
-                txtFieldZeroUActionPerformed(evt);
+                txtFieldSetUActionPerformed(evt);
             }
         });
 
-        txtFieldZeroX.setFont(new Font("Times New Roman", 0, 14)); // NOI18N
-        txtFieldZeroX.setHorizontalAlignment(JTextField.CENTER);
-        txtFieldZeroX.setText(bundle.getString("Main.txtFieldZeroX.text")); // NOI18N
-        txtFieldZeroX.setToolTipText(bundle.getString("Main.txtFieldZeroX.toolTipText")); // NOI18N
-        txtFieldZeroX.addMouseListener(new MouseAdapter() {
+        txtFieldSetX.setFont(new Font("Times New Roman", 0, 14)); // NOI18N
+        txtFieldSetX.setHorizontalAlignment(JTextField.CENTER);
+        txtFieldSetX.setText(bundle.getString("Main.txtFieldSetX.text")); // NOI18N
+        txtFieldSetX.setToolTipText(bundle.getString("Main.txtFieldSetX.toolTipText")); // NOI18N
+        txtFieldSetX.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent evt) {
-                txtFieldZeroXMouseClicked(evt);
+                txtFieldSetXMouseClicked(evt);
             }
         });
-        txtFieldZeroX.addActionListener(new ActionListener() {
+        txtFieldSetX.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
-                txtFieldZeroXActionPerformed(evt);
+                txtFieldSetXActionPerformed(evt);
             }
         });
 
@@ -247,15 +247,15 @@ public class Main extends javax.swing.JFrame {
             .add(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .add(jPanel5Layout.createParallelGroup(GroupLayout.LEADING)
-                    .add(txtFieldZeroU)
-                    .add(GroupLayout.TRAILING, txtFieldZeroX))
+                    .add(txtFieldSetU)
+                    .add(GroupLayout.TRAILING, txtFieldSetX))
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(jPanel5Layout.createParallelGroup(GroupLayout.LEADING)
             .add(jPanel5Layout.createSequentialGroup()
-                .add(txtFieldZeroU, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                .add(txtFieldSetU, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(LayoutStyle.UNRELATED)
-                .add(txtFieldZeroX, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                .add(txtFieldSetX, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -277,14 +277,39 @@ public class Main extends javax.swing.JFrame {
         });
 
         btnLeft.setText(bundle.getString("Main.btnLeft.text")); // NOI18N
+        btnLeft.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btnLeftActionPerformed(evt);
+            }
+        });
 
         btnExtremeLeft.setText(bundle.getString("Main.btnExtremeLeft.text")); // NOI18N
+        btnExtremeLeft.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btnExtremeLeftActionPerformed(evt);
+            }
+        });
 
         btnSomeRight.setText(bundle.getString("Main.btnSomeRight.text")); // NOI18N
+        btnSomeRight.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btnSomeRightActionPerformed(evt);
+            }
+        });
 
         btnRight.setText(bundle.getString("Main.btnRight.text")); // NOI18N
+        btnRight.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btnRightActionPerformed(evt);
+            }
+        });
 
         btnExtremeRight.setText(bundle.getString("Main.btnExtremeRight.text")); // NOI18N
+        btnExtremeRight.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btnExtremeRightActionPerformed(evt);
+            }
+        });
 
         lblZero.setText(bundle.getString("Main.lblZero.text")); // NOI18N
 
@@ -448,10 +473,10 @@ public class Main extends javax.swing.JFrame {
                     .add(btnFuzzy, GroupLayout.PREFERRED_SIZE, 261, GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(LayoutStyle.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .add(jPanel2Layout.createParallelGroup(GroupLayout.LEADING, false)
-                    .add(GroupLayout.TRAILING, jLabel4, GroupLayout.DEFAULT_SIZE, 335, Short.MAX_VALUE)
+                    .add(GroupLayout.TRAILING, jLabel4, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .add(GroupLayout.TRAILING, jLabel3, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .add(GroupLayout.TRAILING, lbl, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .add(jLabel12, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .add(jLabel12, GroupLayout.DEFAULT_SIZE, 335, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(jPanel2Layout.createParallelGroup(GroupLayout.LEADING)
@@ -654,28 +679,48 @@ public class Main extends javax.swing.JFrame {
 
     private void btnZeroInActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnZeroInActionPerformed
 
-        flc.initZero(txtFieldZeroU, txtFieldZeroX, lblZero);
+        flc.initZero(txtFieldSetU, txtFieldSetX, lblZero);
     }//GEN-LAST:event_btnZeroInActionPerformed
 
-    private void txtFieldZeroUMouseClicked(MouseEvent evt) {//GEN-FIRST:event_txtFieldZeroUMouseClicked
-        txtFieldZeroU.setText("");
-    }//GEN-LAST:event_txtFieldZeroUMouseClicked
+    private void txtFieldSetUMouseClicked(MouseEvent evt) {//GEN-FIRST:event_txtFieldSetUMouseClicked
+        txtFieldSetU.setText("");
+    }//GEN-LAST:event_txtFieldSetUMouseClicked
 
-    private void txtFieldZeroXMouseClicked(MouseEvent evt) {//GEN-FIRST:event_txtFieldZeroXMouseClicked
-        txtFieldZeroX.setText("");
-    }//GEN-LAST:event_txtFieldZeroXMouseClicked
+    private void txtFieldSetXMouseClicked(MouseEvent evt) {//GEN-FIRST:event_txtFieldSetXMouseClicked
+        txtFieldSetX.setText("");
+    }//GEN-LAST:event_txtFieldSetXMouseClicked
 
-    private void txtFieldZeroUActionPerformed(ActionEvent evt) {//GEN-FIRST:event_txtFieldZeroUActionPerformed
+    private void txtFieldSetUActionPerformed(ActionEvent evt) {//GEN-FIRST:event_txtFieldSetUActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtFieldZeroUActionPerformed
+    }//GEN-LAST:event_txtFieldSetUActionPerformed
 
     private void btnSomeLeftActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnSomeLeftActionPerformed
-        // TODO add your handling code here:
+        flc.initSomeLeft(txtFieldSetU, txtFieldSetX, lblSomeLeft);
     }//GEN-LAST:event_btnSomeLeftActionPerformed
 
-    private void txtFieldZeroXActionPerformed(ActionEvent evt) {//GEN-FIRST:event_txtFieldZeroXActionPerformed
+    private void txtFieldSetXActionPerformed(ActionEvent evt) {//GEN-FIRST:event_txtFieldSetXActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtFieldZeroXActionPerformed
+    }//GEN-LAST:event_txtFieldSetXActionPerformed
+
+    private void btnLeftActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnLeftActionPerformed
+        flc.initLeft(txtFieldSetU, txtFieldSetX, lblLeft);
+    }//GEN-LAST:event_btnLeftActionPerformed
+
+    private void btnExtremeLeftActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnExtremeLeftActionPerformed
+        flc.initExtremeLeft(txtFieldSetU, txtFieldSetX, lblExtremeLeft);
+    }//GEN-LAST:event_btnExtremeLeftActionPerformed
+
+    private void btnSomeRightActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnSomeRightActionPerformed
+        flc.initSomeRigth(txtFieldSetU, txtFieldSetX, lblSomeRight);
+    }//GEN-LAST:event_btnSomeRightActionPerformed
+
+    private void btnRightActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnRightActionPerformed
+        flc.initRigth(txtFieldSetU, txtFieldSetX, lblRight);
+    }//GEN-LAST:event_btnRightActionPerformed
+
+    private void btnExtremeRightActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnExtremeRightActionPerformed
+        flc.initExtremeRigth(txtFieldSetU, txtFieldSetX, lblExtremeRight);
+    }//GEN-LAST:event_btnExtremeRightActionPerformed
 
     /**
      * @param args the command line arguments
@@ -766,7 +811,7 @@ public class Main extends javax.swing.JFrame {
     private JLabel lblSomeLeft;
     private JLabel lblSomeRight;
     private JLabel lblZero;
-    private JTextField txtFieldZeroU;
-    private JTextField txtFieldZeroX;
+    private JTextField txtFieldSetU;
+    private JTextField txtFieldSetX;
     // End of variables declaration//GEN-END:variables
 }

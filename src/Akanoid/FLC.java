@@ -56,6 +56,7 @@ public class FLC {
      *
      * @param u
      * @param x
+     * @param lbl
      */
     public void initZero(JTextField u, JTextField x, JLabel lbl) {
         String uValues = u.getText();
@@ -75,7 +76,7 @@ public class FLC {
         StringBuilder result = new StringBuilder();
         result.append("{");
         for (int i = 0; i < zero.size(); i++) {
-            result.append(String.valueOf(zero.get(i).getU()) + "/" + String.valueOf(zero.get(i).getX()) + "; ");
+            result.append(String.valueOf(zero.get(i).getU())).append("/").append(String.valueOf(zero.get(i).getX())).append("; ");
         }
         result.append("}");
         lbl.setText(String.valueOf(result));
@@ -86,8 +87,9 @@ public class FLC {
      *
      * @param u
      * @param x
+     * @param lbl
      */
-    public void initSomeLeft(JTextField u, JTextField x) {
+    public void initSomeLeft(JTextField u, JTextField x, JLabel lbl) {
         String uValues = u.getText();
         String xValues = x.getText();
         String[] uNumbers = uValues.split(",");
@@ -101,6 +103,13 @@ public class FLC {
             v = Double.parseDouble(xNumbers[i]);
             someLeft.add(new Pairs(fX, v));
         }
+        StringBuilder result = new StringBuilder();
+        result.append("{");
+        for (int i = 0; i < someLeft.size(); i++) {
+            result.append(String.valueOf(someLeft.get(i).getU())).append("/").append(String.valueOf(someLeft.get(i).getX())).append("; ");
+        }
+        result.append("}");
+        lbl.setText(String.valueOf(result));
     }
 
     /**
@@ -108,8 +117,9 @@ public class FLC {
      *
      * @param u
      * @param x
+     * @param lbl
      */
-    public void initLeft(JTextField u, JTextField x) {
+    public void initLeft(JTextField u, JTextField x, JLabel lbl) {
         String uValues = u.getText();
         String xValues = x.getText();
         String[] uNumbers = uValues.split(",");
@@ -123,6 +133,13 @@ public class FLC {
             v = Double.parseDouble(xNumbers[i]);
             left.add(new Pairs(fX, v));
         }
+        StringBuilder result = new StringBuilder();
+        result.append("{");
+        for (int i = 0; i < left.size(); i++) {
+            result.append(String.valueOf(left.get(i).getU())).append("/").append(String.valueOf(left.get(i).getX())).append("; ");
+        }
+        result.append("}");
+        lbl.setText(String.valueOf(result));
     }
 
     /**
@@ -130,8 +147,9 @@ public class FLC {
      *
      * @param u
      * @param x
+     * @param lbl
      */
-    public void initExtremeLeft(JTextField u, JTextField x) {
+    public void initExtremeLeft(JTextField u, JTextField x, JLabel lbl) {
         String uValues = u.getText();
         String xValues = x.getText();
         String[] uNumbers = uValues.split(",");
@@ -145,6 +163,13 @@ public class FLC {
             v = Double.parseDouble(xNumbers[i]);
             extremeLeft.add(new Pairs(fX, v));
         }
+        StringBuilder result = new StringBuilder();
+        result.append("{");
+        for (int i = 0; i < zero.size(); i++) {
+            result.append(String.valueOf(extremeLeft.get(i).getU())).append("/").append(String.valueOf(extremeLeft.get(i).getX())).append("; ");
+        }
+        result.append("}");
+        lbl.setText(String.valueOf(result));
     }
 
     /**
@@ -152,8 +177,9 @@ public class FLC {
      *
      * @param u
      * @param x
+     * @param lbl
      */
-    public void initSomeRigth(JTextField u, JTextField x) {
+    public void initSomeRigth(JTextField u, JTextField x, JLabel lbl) {
         String uValues = u.getText();
         String xValues = x.getText();
         String[] uNumbers = uValues.split(",");
@@ -167,6 +193,13 @@ public class FLC {
             v = Double.parseDouble(xNumbers[i]);
             someRight.add(new Pairs(fX, v));
         }
+        StringBuilder result = new StringBuilder();
+        result.append("{");
+        for (int i = 0; i < someRight.size(); i++) {
+            result.append(String.valueOf(someRight.get(i).getU())).append("/").append(String.valueOf(someRight.get(i).getX())).append("; ");
+        }
+        result.append("}");
+        lbl.setText(String.valueOf(result));
     }
 
     /**
@@ -174,8 +207,9 @@ public class FLC {
      *
      * @param u
      * @param x
+     * @param lbl
      */
-    public void initRigth(JTextField u, JTextField x) {
+    public void initRigth(JTextField u, JTextField x, JLabel lbl) {
         String uValues = u.getText();
         String xValues = x.getText();
         String[] uNumbers = uValues.split(",");
@@ -189,6 +223,13 @@ public class FLC {
             v = Double.parseDouble(xNumbers[i]);
             right.add(new Pairs(fX, v));
         }
+        StringBuilder result = new StringBuilder();
+        result.append("{");
+        for (int i = 0; i < right.size(); i++) {
+            result.append(String.valueOf(right.get(i).getU())).append("/").append(String.valueOf(right.get(i).getX())).append("; ");
+        }
+        result.append("}");
+        lbl.setText(String.valueOf(result));
     }
 
     /**
@@ -196,8 +237,9 @@ public class FLC {
      *
      * @param u
      * @param x
+     * @param lbl
      */
-    public void initExtremeRigth(JTextField u, JTextField x) {
+    public void initExtremeRigth(JTextField u, JTextField x, JLabel lbl) {
         String uValues = u.getText();
         String xValues = x.getText();
         String[] uNumbers = uValues.split(",");
@@ -211,6 +253,13 @@ public class FLC {
             v = Double.parseDouble(xNumbers[i]);
             extremeRight.add(new Pairs(fX, v));
         }
+        StringBuilder result = new StringBuilder();
+        result.append("{");
+        for (int i = 0; i < extremeRight.size(); i++) {
+            result.append(String.valueOf(extremeRight.get(i).getU())).append("/").append(String.valueOf(extremeRight.get(i).getX())).append("; ");
+        }
+        result.append("}");
+        lbl.setText(String.valueOf(result));
     }
 
     /**
