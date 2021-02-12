@@ -50,7 +50,7 @@ public class Main extends javax.swing.JFrame {
         jPanel1 = new JPanel();
         jButton1 = new JButton();
         tfZeroInU = new JTextField();
-        jTextField1 = new JTextField();
+        tfZeroInX = new JTextField();
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         ResourceBundle bundle = ResourceBundle.getBundle("Akanoid/Bundle"); // NOI18N
@@ -87,11 +87,16 @@ public class Main extends javax.swing.JFrame {
                 tfZeroInUMouseClicked(evt);
             }
         });
+        tfZeroInU.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                tfZeroInUActionPerformed(evt);
+            }
+        });
 
-        jTextField1.setText(bundle.getString("Main.jTextField1.text")); // NOI18N
-        jTextField1.addMouseListener(new MouseAdapter() {
+        tfZeroInX.setText(bundle.getString("Main.tfZeroInX.text")); // NOI18N
+        tfZeroInX.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent evt) {
-                jTextField1MouseClicked(evt);
+                tfZeroInXMouseClicked(evt);
             }
         });
 
@@ -101,7 +106,7 @@ public class Main extends javax.swing.JFrame {
             .add(jPanel1Layout.createSequentialGroup()
                 .add(jPanel1Layout.createParallelGroup(GroupLayout.LEADING)
                     .add(tfZeroInU)
-                    .add(jTextField1, GroupLayout.DEFAULT_SIZE, 590, Short.MAX_VALUE))
+                    .add(tfZeroInX, GroupLayout.DEFAULT_SIZE, 590, Short.MAX_VALUE))
                 .addPreferredGap(LayoutStyle.RELATED)
                 .add(jButton1, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
                 .add(4, 4, 4))
@@ -113,7 +118,7 @@ public class Main extends javax.swing.JFrame {
                         .add(13, 13, 13)
                         .add(tfZeroInU, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(LayoutStyle.RELATED)
-                        .add(jTextField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                        .add(tfZeroInX, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                     .add(jPanel1Layout.createSequentialGroup()
                         .add(29, 29, 29)
                         .add(jButton1)))
@@ -138,16 +143,20 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-        flc.initZero(lblZeroInU, lblZeroInX);
+        flc.initZero(tfZeroInU, tfZeroInX);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void tfZeroInUMouseClicked(MouseEvent evt) {//GEN-FIRST:event_tfZeroInUMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_tfZeroInUMouseClicked
 
-    private void jTextField1MouseClicked(MouseEvent evt) {//GEN-FIRST:event_jTextField1MouseClicked
+    private void tfZeroInXMouseClicked(MouseEvent evt) {//GEN-FIRST:event_tfZeroInXMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1MouseClicked
+    }//GEN-LAST:event_tfZeroInXMouseClicked
+
+    private void tfZeroInUActionPerformed(ActionEvent evt) {//GEN-FIRST:event_tfZeroInUActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfZeroInUActionPerformed
 
     /**
      * @param args the command line arguments
@@ -183,7 +192,7 @@ public class Main extends javax.swing.JFrame {
     private JButton jButton1;
     private JPanel jPanel1;
     private JTabbedPane jTabbedPane1;
-    private JTextField jTextField1;
     private JTextField tfZeroInU;
+    private JTextField tfZeroInX;
     // End of variables declaration//GEN-END:variables
 }
