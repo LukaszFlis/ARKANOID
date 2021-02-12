@@ -1,7 +1,9 @@
 package Akanoid;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
+import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 /**
@@ -55,7 +57,7 @@ public class FLC {
      * @param u
      * @param x
      */
-    public void initZero(JTextField u, JTextField x) {
+    public void initZero(JTextField u, JTextField x, JLabel lbl) {
         String uValues = u.getText();
         String xValues = x.getText();
         String[] uNumbers = uValues.split(",");
@@ -70,6 +72,13 @@ public class FLC {
             v = Double.parseDouble(xNumbers[i]);
             zero.add(new Pairs(fX, v));
         }
+        StringBuilder result = new StringBuilder();
+        result.append("{");
+        for (int i = 0; i < zero.size(); i++) {
+            result.append(String.valueOf(zero.get(i).getU()) + "/" + String.valueOf(zero.get(i).getX()) + "; ");
+        }
+        result.append("}");
+        lbl.setText(String.valueOf(result));
     }
 
     /**
@@ -208,7 +217,7 @@ public class FLC {
      *
      * @param list1
      * @param list2
-     * @return 
+     * @return
      */
     public ArrayList<Pairs> calcMin(ArrayList<Pairs> list1, ArrayList<Pairs> list2) {
         ArrayList<Pairs> result = new ArrayList<>();
@@ -226,7 +235,7 @@ public class FLC {
      *
      * @param list1
      * @param list2
-     * @return 
+     * @return
      */
     public ArrayList<Pairs> calcMax(ArrayList<Pairs> list1, ArrayList<Pairs> list2) {
         ArrayList<Pairs> result = new ArrayList<>();
