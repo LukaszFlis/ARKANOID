@@ -1,8 +1,6 @@
 package Akanoid;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
@@ -12,7 +10,6 @@ import javax.swing.JTextField;
  */
 public class FLC {
 
-    private final Scanner sc = new Scanner(System.in);
     //WEJŚCIE
     private final int input = 220;
     //WYJŚCIE
@@ -299,6 +296,21 @@ public class FLC {
     }
 
     /**
+     *  Fuzzyfication for input value Difference = 220
+     * @param list fuzzy set
+     * @return value of membership function for fuzzy set element equal to input  
+     */
+    public String fuzzyfication(ArrayList<Pairs> list) {
+        String result = "";
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getX() == 220) {
+                result = String.valueOf(list.get(i).getU());
+            }
+        }
+        return result;
+    }
+
+    /**
      *
      * @param paddleX
      * @param ballX
@@ -323,4 +335,32 @@ public class FLC {
         return paddleX;
     }
 
+    public ArrayList<Pairs> getZero() {
+        return zero;
+    }
+
+    public ArrayList<Pairs> getSomeLeft() {
+        return someLeft;
+    }
+
+    public ArrayList<Pairs> getLeft() {
+        return left;
+    }
+
+    public ArrayList<Pairs> getExtremeLeft() {
+        return extremeLeft;
+    }
+
+    public ArrayList<Pairs> getSomeRight() {
+        return someRight;
+    }
+
+    public ArrayList<Pairs> getRight() {
+        return right;
+    }
+
+    public ArrayList<Pairs> getExtremeRight() {
+        return extremeRight;
+    }
+    
 }
