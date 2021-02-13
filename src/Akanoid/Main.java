@@ -1,14 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Akanoid;
 
+import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ResourceBundle;
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JSeparator;
+import javax.swing.JTabbedPane;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
+import javax.swing.border.TitledBorder;
 import org.jdesktop.layout.GroupLayout;
+import org.jdesktop.layout.LayoutStyle;
 
 /**
  *
@@ -16,11 +27,14 @@ import org.jdesktop.layout.GroupLayout;
  */
 public class Main extends javax.swing.JFrame {
 
+    FLC flc = new FLC();
+
     /**
      * Creates new form Main
      */
     public Main() {
         initComponents();
+        flc.initFuzzySets();
     }
 
     /**
@@ -32,35 +46,718 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        gamePlay1 = new GamePlay();
+        jTabbedPane1 = new JTabbedPane();
+        gamePlay2 = new GamePlay();
+        jPanel1 = new JPanel();
+        jPanel4 = new JPanel();
+        jLabel1 = new JLabel();
+        jLabel5 = new JLabel();
+        jLabel6 = new JLabel();
+        jLabel7 = new JLabel();
+        jLabel8 = new JLabel();
+        jLabel9 = new JLabel();
+        jLabel23 = new JLabel();
+        jPanel5 = new JPanel();
+        txtFieldSetU = new JTextField();
+        txtFieldSetX = new JTextField();
+        jPanel6 = new JPanel();
+        btnZeroIn = new JButton();
+        btnSomeLeft = new JButton();
+        btnLeft = new JButton();
+        btnExtremeLeft = new JButton();
+        btnSomeRight = new JButton();
+        btnRight = new JButton();
+        btnExtremeRight = new JButton();
+        lblZero = new JLabel();
+        lblSomeLeft = new JLabel();
+        lblSomeRight = new JLabel();
+        lblLeft = new JLabel();
+        lblExtremeLeft = new JLabel();
+        jSeparator1 = new JSeparator();
+        jSeparator2 = new JSeparator();
+        jSeparator3 = new JSeparator();
+        jSeparator4 = new JSeparator();
+        jSeparator5 = new JSeparator();
+        lblRight = new JLabel();
+        jSeparator6 = new JSeparator();
+        lblExtremeRight = new JLabel();
+        jPanel3 = new JPanel();
+        jPanel2 = new JPanel();
+        lblLeftFuzzy = new JLabel();
+        lblZeroFuzzy = new JLabel();
+        lblSomeRightFuzzy = new JLabel();
+        lblSomeLeftFuzzy = new JLabel();
+        btnFuzzy = new JButton();
+        lblExtremeLeftFuzzy = new JLabel();
+        lblRightFuzzy = new JLabel();
+        lblExtremRightFuzzy = new JLabel();
+        jPanel7 = new JPanel();
+        btnInference = new JButton();
+        lblR1 = new JLabel();
+        lblR2 = new JLabel();
+        lblR4 = new JLabel();
+        lblR5 = new JLabel();
+        lblR3 = new JLabel();
+        lblR6 = new JLabel();
+        lblR7 = new JLabel();
+        jPanel8 = new JPanel();
+        btnAgregation = new JButton();
+        lblAgregation = new JLabel();
+        jPanel9 = new JPanel();
+        btnDeFuzzy = new JButton();
+        lblDeFuzzy = new JLabel();
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         ResourceBundle bundle = ResourceBundle.getBundle("Akanoid/Bundle"); // NOI18N
         setTitle(bundle.getString("Main.title")); // NOI18N
         setLocationByPlatform(true);
         setResizable(false);
-        setSize(new Dimension(700, 600));
+        setSize(new Dimension(850, 700));
 
-        GroupLayout gamePlay1Layout = new GroupLayout(gamePlay1);
-        gamePlay1.setLayout(gamePlay1Layout);
-        gamePlay1Layout.setHorizontalGroup(gamePlay1Layout.createParallelGroup(GroupLayout.LEADING)
-            .add(0, 700, Short.MAX_VALUE)
+        jTabbedPane1.setFocusable(false);
+
+        GroupLayout gamePlay2Layout = new GroupLayout(gamePlay2);
+        gamePlay2.setLayout(gamePlay2Layout);
+        gamePlay2Layout.setHorizontalGroup(gamePlay2Layout.createParallelGroup(GroupLayout.LEADING)
+            .add(0, 894, Short.MAX_VALUE)
         );
-        gamePlay1Layout.setVerticalGroup(gamePlay1Layout.createParallelGroup(GroupLayout.LEADING)
-            .add(0, 600, Short.MAX_VALUE)
+        gamePlay2Layout.setVerticalGroup(gamePlay2Layout.createParallelGroup(GroupLayout.LEADING)
+            .add(0, 628, Short.MAX_VALUE)
         );
+
+        jTabbedPane1.addTab(bundle.getString("Main.gamePlay2.TabConstraints.tabTitle"), gamePlay2); // NOI18N
+
+        jPanel1.setBackground(new Color(204, 204, 255));
+
+        jPanel4.setBackground(new Color(102, 102, 255));
+        jPanel4.setBorder(BorderFactory.createTitledBorder(null, bundle.getString("Main.jPanel4.border.title"), TitledBorder.LEFT, TitledBorder.TOP, new Font("Times New Roman", 0, 12))); // NOI18N
+
+        jLabel1.setFont(new Font("Times New Roman", 0, 14)); // NOI18N
+        jLabel1.setForeground(new Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(SwingConstants.CENTER);
+        jLabel1.setText(bundle.getString("Main.jLabel1.text")); // NOI18N
+
+        jLabel5.setFont(new Font("Times New Roman", 0, 14)); // NOI18N
+        jLabel5.setForeground(new Color(255, 255, 255));
+        jLabel5.setHorizontalAlignment(SwingConstants.CENTER);
+        jLabel5.setText(bundle.getString("Main.jLabel5.text")); // NOI18N
+
+        jLabel6.setFont(new Font("Times New Roman", 0, 14)); // NOI18N
+        jLabel6.setForeground(new Color(255, 255, 255));
+        jLabel6.setHorizontalAlignment(SwingConstants.CENTER);
+        jLabel6.setText(bundle.getString("Main.jLabel6.text")); // NOI18N
+
+        jLabel7.setFont(new Font("Times New Roman", 0, 14)); // NOI18N
+        jLabel7.setForeground(new Color(255, 255, 255));
+        jLabel7.setHorizontalAlignment(SwingConstants.CENTER);
+        jLabel7.setText(bundle.getString("Main.jLabel7.text")); // NOI18N
+
+        jLabel8.setFont(new Font("Times New Roman", 0, 14)); // NOI18N
+        jLabel8.setForeground(new Color(255, 255, 255));
+        jLabel8.setHorizontalAlignment(SwingConstants.CENTER);
+        jLabel8.setText(bundle.getString("Main.jLabel8.text")); // NOI18N
+
+        jLabel9.setFont(new Font("Times New Roman", 0, 14)); // NOI18N
+        jLabel9.setForeground(new Color(255, 255, 255));
+        jLabel9.setHorizontalAlignment(SwingConstants.CENTER);
+        jLabel9.setText(bundle.getString("Main.jLabel9.text")); // NOI18N
+
+        jLabel23.setFont(new Font("Times New Roman", 0, 14)); // NOI18N
+        jLabel23.setForeground(new Color(255, 255, 255));
+        jLabel23.setHorizontalAlignment(SwingConstants.CENTER);
+        jLabel23.setText(bundle.getString("Main.jLabel23.text")); // NOI18N
+
+        GroupLayout jPanel4Layout = new GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(jPanel4Layout.createParallelGroup(GroupLayout.LEADING)
+            .add(jPanel4Layout.createSequentialGroup()
+                .add(183, 183, 183)
+                .add(jPanel4Layout.createParallelGroup(GroupLayout.TRAILING, false)
+                    .add(GroupLayout.LEADING, jLabel9, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(jLabel8, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(jLabel23, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(jLabel1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(GroupLayout.LEADING, jLabel5, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(GroupLayout.LEADING, jLabel6, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(GroupLayout.LEADING, jLabel7, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .add(168, 168, 168))
+        );
+        jPanel4Layout.setVerticalGroup(jPanel4Layout.createParallelGroup(GroupLayout.LEADING)
+            .add(jPanel4Layout.createSequentialGroup()
+                .add(jLabel1)
+                .addPreferredGap(LayoutStyle.RELATED)
+                .add(jLabel5)
+                .addPreferredGap(LayoutStyle.RELATED)
+                .add(jLabel6)
+                .addPreferredGap(LayoutStyle.RELATED)
+                .add(jLabel7)
+                .addPreferredGap(LayoutStyle.RELATED)
+                .add(jLabel8)
+                .addPreferredGap(LayoutStyle.RELATED)
+                .add(jLabel9)
+                .addPreferredGap(LayoutStyle.RELATED)
+                .add(jLabel23, GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE))
+        );
+
+        jPanel5.setBackground(new Color(153, 153, 255));
+        jPanel5.setBorder(BorderFactory.createTitledBorder(null, bundle.getString("Main.jPanel5.border.title"), TitledBorder.LEFT, TitledBorder.TOP, new Font("Times New Roman", 0, 12))); // NOI18N
+
+        txtFieldSetU.setFont(new Font("Times New Roman", 0, 14)); // NOI18N
+        txtFieldSetU.setHorizontalAlignment(JTextField.CENTER);
+        txtFieldSetU.setText(bundle.getString("Main.txtFieldSetU.text")); // NOI18N
+        txtFieldSetU.setToolTipText(bundle.getString("Main.txtFieldSetU.toolTipText")); // NOI18N
+        txtFieldSetU.addMouseListener(new MouseAdapter() {
+            public void mouseClicked(MouseEvent evt) {
+                txtFieldSetUMouseClicked(evt);
+            }
+        });
+        txtFieldSetU.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                txtFieldSetUActionPerformed(evt);
+            }
+        });
+
+        txtFieldSetX.setFont(new Font("Times New Roman", 0, 14)); // NOI18N
+        txtFieldSetX.setHorizontalAlignment(JTextField.CENTER);
+        txtFieldSetX.setText(bundle.getString("Main.txtFieldSetX.text")); // NOI18N
+        txtFieldSetX.setToolTipText(bundle.getString("Main.txtFieldSetX.toolTipText")); // NOI18N
+        txtFieldSetX.addMouseListener(new MouseAdapter() {
+            public void mouseClicked(MouseEvent evt) {
+                txtFieldSetXMouseClicked(evt);
+            }
+        });
+        txtFieldSetX.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                txtFieldSetXActionPerformed(evt);
+            }
+        });
+
+        GroupLayout jPanel5Layout = new GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(jPanel5Layout.createParallelGroup(GroupLayout.LEADING)
+            .add(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jPanel5Layout.createParallelGroup(GroupLayout.LEADING)
+                    .add(txtFieldSetU)
+                    .add(GroupLayout.TRAILING, txtFieldSetX))
+                .addContainerGap())
+        );
+        jPanel5Layout.setVerticalGroup(jPanel5Layout.createParallelGroup(GroupLayout.LEADING)
+            .add(jPanel5Layout.createSequentialGroup()
+                .add(txtFieldSetU, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(LayoutStyle.UNRELATED)
+                .add(txtFieldSetX, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel6.setBackground(new Color(102, 102, 255));
+        jPanel6.setBorder(BorderFactory.createTitledBorder(null, bundle.getString("Main.jPanel6.border.title"), TitledBorder.LEFT, TitledBorder.TOP, new Font("Times New Roman", 0, 12))); // NOI18N
+
+        btnZeroIn.setText(bundle.getString("Main.btnZeroIn.text")); // NOI18N
+        btnZeroIn.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btnZeroInActionPerformed(evt);
+            }
+        });
+
+        btnSomeLeft.setText(bundle.getString("Main.btnSomeLeft.text")); // NOI18N
+        btnSomeLeft.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btnSomeLeftActionPerformed(evt);
+            }
+        });
+
+        btnLeft.setText(bundle.getString("Main.btnLeft.text")); // NOI18N
+        btnLeft.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btnLeftActionPerformed(evt);
+            }
+        });
+
+        btnExtremeLeft.setText(bundle.getString("Main.btnExtremeLeft.text")); // NOI18N
+        btnExtremeLeft.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btnExtremeLeftActionPerformed(evt);
+            }
+        });
+
+        btnSomeRight.setText(bundle.getString("Main.btnSomeRight.text")); // NOI18N
+        btnSomeRight.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btnSomeRightActionPerformed(evt);
+            }
+        });
+
+        btnRight.setText(bundle.getString("Main.btnRight.text")); // NOI18N
+        btnRight.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btnRightActionPerformed(evt);
+            }
+        });
+
+        btnExtremeRight.setText(bundle.getString("Main.btnExtremeRight.text")); // NOI18N
+        btnExtremeRight.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btnExtremeRightActionPerformed(evt);
+            }
+        });
+
+        lblZero.setText(bundle.getString("Main.lblZero.text")); // NOI18N
+
+        lblSomeLeft.setText(bundle.getString("Main.lblSomeLeft.text")); // NOI18N
+
+        lblSomeRight.setText(bundle.getString("Main.lblSomeRight.text")); // NOI18N
+
+        lblLeft.setText(bundle.getString("Main.lblLeft.text")); // NOI18N
+
+        lblExtremeLeft.setText(bundle.getString("Main.lblExtremeLeft.text")); // NOI18N
+
+        lblRight.setText(bundle.getString("Main.lblRight.text")); // NOI18N
+
+        lblExtremeRight.setText(bundle.getString("Main.lblExtremeRight.text")); // NOI18N
+
+        GroupLayout jPanel6Layout = new GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(jPanel6Layout.createParallelGroup(GroupLayout.LEADING)
+            .add(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jPanel6Layout.createParallelGroup(GroupLayout.LEADING)
+                    .add(jSeparator6)
+                    .add(jPanel6Layout.createSequentialGroup()
+                        .add(jPanel6Layout.createParallelGroup(GroupLayout.TRAILING)
+                            .add(jSeparator5)
+                            .add(jSeparator4)
+                            .add(jSeparator3)
+                            .add(jSeparator2)
+                            .add(GroupLayout.LEADING, jSeparator1)
+                            .add(jPanel6Layout.createSequentialGroup()
+                                .add(jPanel6Layout.createParallelGroup(GroupLayout.TRAILING, false)
+                                    .add(btnSomeLeft, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .add(GroupLayout.LEADING, btnExtremeRight, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .add(GroupLayout.LEADING, btnRight, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .add(GroupLayout.LEADING, btnSomeRight, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .add(GroupLayout.LEADING, btnExtremeLeft, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(LayoutStyle.RELATED)
+                                .add(jPanel6Layout.createParallelGroup(GroupLayout.LEADING)
+                                    .add(lblSomeLeft, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .add(lblExtremeLeft, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .add(lblSomeRight, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .add(lblRight, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .add(lblExtremeRight, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .add(jPanel6Layout.createSequentialGroup()
+                                .add(btnLeft, GroupLayout.PREFERRED_SIZE, 127, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.RELATED)
+                                .add(lblLeft, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .add(jPanel6Layout.createSequentialGroup()
+                                .add(btnZeroIn, GroupLayout.PREFERRED_SIZE, 129, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.RELATED)
+                                .add(lblZero, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .add(1, 1, 1))))
+        );
+        jPanel6Layout.setVerticalGroup(jPanel6Layout.createParallelGroup(GroupLayout.LEADING)
+            .add(jPanel6Layout.createSequentialGroup()
+                .add(jPanel6Layout.createParallelGroup(GroupLayout.BASELINE)
+                    .add(lblZero, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+                    .add(btnZeroIn))
+                .addPreferredGap(LayoutStyle.RELATED)
+                .add(jSeparator1, GroupLayout.PREFERRED_SIZE, 5, GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(LayoutStyle.RELATED)
+                .add(jPanel6Layout.createParallelGroup(GroupLayout.BASELINE)
+                    .add(btnSomeLeft)
+                    .add(lblSomeLeft, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(LayoutStyle.RELATED)
+                .add(jSeparator2, GroupLayout.PREFERRED_SIZE, 5, GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(LayoutStyle.RELATED)
+                .add(jPanel6Layout.createParallelGroup(GroupLayout.BASELINE)
+                    .add(lblLeft, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+                    .add(btnLeft))
+                .addPreferredGap(LayoutStyle.UNRELATED)
+                .add(jSeparator3, GroupLayout.PREFERRED_SIZE, 5, GroupLayout.PREFERRED_SIZE)
+                .add(7, 7, 7)
+                .add(jPanel6Layout.createParallelGroup(GroupLayout.BASELINE)
+                    .add(btnExtremeLeft)
+                    .add(lblExtremeLeft, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(LayoutStyle.UNRELATED)
+                .add(jSeparator4, GroupLayout.PREFERRED_SIZE, 5, GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(LayoutStyle.RELATED)
+                .add(jPanel6Layout.createParallelGroup(GroupLayout.BASELINE)
+                    .add(btnSomeRight)
+                    .add(lblSomeRight, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
+                .add(4, 4, 4)
+                .add(jSeparator5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(LayoutStyle.UNRELATED)
+                .add(jPanel6Layout.createParallelGroup(GroupLayout.BASELINE)
+                    .add(btnRight)
+                    .add(lblRight, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(LayoutStyle.RELATED)
+                .add(jSeparator6, GroupLayout.PREFERRED_SIZE, 6, GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(LayoutStyle.RELATED)
+                .add(jPanel6Layout.createParallelGroup(GroupLayout.LEADING, false)
+                    .add(btnExtremeRight, GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
+                    .add(lblExtremeRight, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        GroupLayout jPanel1Layout = new GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(jPanel1Layout.createParallelGroup(GroupLayout.LEADING)
+            .add(jPanel5, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .add(jPanel6, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .add(jPanel4, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(jPanel1Layout.createParallelGroup(GroupLayout.LEADING)
+            .add(jPanel1Layout.createSequentialGroup()
+                .add(jPanel5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(LayoutStyle.RELATED)
+                .add(jPanel6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(LayoutStyle.RELATED)
+                .add(jPanel4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        jTabbedPane1.addTab(bundle.getString("Main.jPanel1.TabConstraints.tabTitle"), jPanel1); // NOI18N
+
+        jPanel3.setBackground(new Color(102, 255, 255));
+
+        jPanel2.setBackground(new Color(0, 51, 204));
+        jPanel2.setBorder(BorderFactory.createTitledBorder(null, bundle.getString("Main.jPanel2.border.title"), TitledBorder.LEFT, TitledBorder.TOP, new Font("Times New Roman", 1, 12))); // NOI18N
+        jPanel2.setForeground(new Color(255, 255, 255));
+        jPanel2.setFont(new Font("Times New Roman", 0, 12)); // NOI18N
+        jPanel2.setPreferredSize(new Dimension(500, 148));
+
+        lblLeftFuzzy.setForeground(new Color(255, 255, 255));
+        lblLeftFuzzy.setText(bundle.getString("Main.lblLeftFuzzy.text")); // NOI18N
+
+        lblZeroFuzzy.setForeground(new Color(255, 255, 255));
+        lblZeroFuzzy.setText(bundle.getString("Main.lblZeroFuzzy.text")); // NOI18N
+
+        lblSomeRightFuzzy.setForeground(new Color(255, 255, 255));
+        lblSomeRightFuzzy.setText(bundle.getString("Main.lblSomeRightFuzzy.text")); // NOI18N
+
+        lblSomeLeftFuzzy.setForeground(new Color(255, 255, 255));
+        lblSomeLeftFuzzy.setText(bundle.getString("Main.lblSomeLeftFuzzy.text")); // NOI18N
+        lblSomeLeftFuzzy.setPreferredSize(new Dimension(335, 25));
+
+        btnFuzzy.setFont(new Font("Times New Roman", 0, 14)); // NOI18N
+        btnFuzzy.setText(bundle.getString("Main.btnFuzzy.text")); // NOI18N
+        btnFuzzy.setHorizontalTextPosition(SwingConstants.CENTER);
+        btnFuzzy.setMaximumSize(new Dimension(192, 25));
+        btnFuzzy.setPreferredSize(new Dimension(192, 25));
+        btnFuzzy.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btnFuzzyActionPerformed(evt);
+            }
+        });
+
+        lblExtremeLeftFuzzy.setForeground(new Color(255, 255, 255));
+        lblExtremeLeftFuzzy.setText(bundle.getString("Main.lblExtremeLeftFuzzy.text")); // NOI18N
+
+        lblRightFuzzy.setForeground(new Color(255, 255, 255));
+        lblRightFuzzy.setText(bundle.getString("Main.lblRightFuzzy.text")); // NOI18N
+
+        lblExtremRightFuzzy.setForeground(new Color(255, 255, 255));
+        lblExtremRightFuzzy.setText(bundle.getString("Main.lblExtremRightFuzzy.text")); // NOI18N
+
+        GroupLayout jPanel2Layout = new GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(jPanel2Layout.createParallelGroup(GroupLayout.LEADING)
+            .add(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jPanel2Layout.createParallelGroup(GroupLayout.LEADING)
+                    .add(lblSomeLeftFuzzy, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                    .add(lblExtremeLeftFuzzy, GroupLayout.PREFERRED_SIZE, 335, GroupLayout.PREFERRED_SIZE)
+                    .add(lblRightFuzzy, GroupLayout.PREFERRED_SIZE, 335, GroupLayout.PREFERRED_SIZE)
+                    .add(btnFuzzy, GroupLayout.PREFERRED_SIZE, 261, GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(LayoutStyle.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .add(jPanel2Layout.createParallelGroup(GroupLayout.LEADING, false)
+                    .add(GroupLayout.TRAILING, lblSomeRightFuzzy, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(GroupLayout.TRAILING, lblLeftFuzzy, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(GroupLayout.TRAILING, lblZeroFuzzy, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(lblExtremRightFuzzy, GroupLayout.DEFAULT_SIZE, 335, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(jPanel2Layout.createParallelGroup(GroupLayout.LEADING)
+            .add(jPanel2Layout.createSequentialGroup()
+                .add(jPanel2Layout.createParallelGroup(GroupLayout.BASELINE)
+                    .add(lblZeroFuzzy, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+                    .add(btnFuzzy, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(LayoutStyle.RELATED)
+                .add(jPanel2Layout.createParallelGroup(GroupLayout.BASELINE)
+                    .add(lblSomeLeftFuzzy, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+                    .add(lblLeftFuzzy, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(LayoutStyle.RELATED)
+                .add(jPanel2Layout.createParallelGroup(GroupLayout.BASELINE)
+                    .add(lblSomeRightFuzzy, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
+                    .add(lblExtremeLeftFuzzy, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(LayoutStyle.RELATED)
+                .add(jPanel2Layout.createParallelGroup(GroupLayout.BASELINE)
+                    .add(lblExtremRightFuzzy, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+                    .add(lblRightFuzzy, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
+        );
+
+        jPanel7.setBackground(new Color(0, 51, 204));
+        jPanel7.setBorder(BorderFactory.createTitledBorder(null, bundle.getString("Main.jPanel7.border.title"), TitledBorder.LEFT, TitledBorder.TOP, new Font("Times New Roman", 1, 12))); // NOI18N
+
+        btnInference.setFont(new Font("Times New Roman", 0, 14)); // NOI18N
+        btnInference.setText(bundle.getString("Main.btnInference.text")); // NOI18N
+        btnInference.setHorizontalTextPosition(SwingConstants.CENTER);
+        btnInference.setPreferredSize(new Dimension(192, 25));
+        btnInference.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btnInferenceActionPerformed(evt);
+            }
+        });
+
+        lblR1.setForeground(new Color(255, 255, 255));
+        lblR1.setText(bundle.getString("Main.lblR1.text")); // NOI18N
+
+        lblR2.setForeground(new Color(255, 255, 255));
+        lblR2.setText(bundle.getString("Main.lblR2.text")); // NOI18N
+
+        lblR4.setForeground(new Color(255, 255, 255));
+        lblR4.setText(bundle.getString("Main.lblR4.text")); // NOI18N
+
+        lblR5.setForeground(new Color(255, 255, 255));
+        lblR5.setText(bundle.getString("Main.lblR5.text")); // NOI18N
+
+        lblR3.setForeground(new Color(255, 255, 255));
+        lblR3.setText(bundle.getString("Main.lblR3.text")); // NOI18N
+
+        lblR6.setForeground(new Color(255, 255, 255));
+        lblR6.setText(bundle.getString("Main.lblR6.text")); // NOI18N
+
+        lblR7.setForeground(new Color(255, 255, 255));
+        lblR7.setText(bundle.getString("Main.lblR7.text")); // NOI18N
+
+        GroupLayout jPanel7Layout = new GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(jPanel7Layout.createParallelGroup(GroupLayout.LEADING)
+            .add(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jPanel7Layout.createParallelGroup(GroupLayout.LEADING)
+                    .add(jPanel7Layout.createSequentialGroup()
+                        .add(btnInference, GroupLayout.PREFERRED_SIZE, 262, GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(LayoutStyle.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(lblR1, GroupLayout.PREFERRED_SIZE, 335, GroupLayout.PREFERRED_SIZE))
+                    .add(jPanel7Layout.createSequentialGroup()
+                        .add(lblR4, GroupLayout.PREFERRED_SIZE, 335, GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(LayoutStyle.RELATED, 192, Short.MAX_VALUE)
+                        .add(lblR5, GroupLayout.PREFERRED_SIZE, 335, GroupLayout.PREFERRED_SIZE))
+                    .add(jPanel7Layout.createSequentialGroup()
+                        .add(lblR2, GroupLayout.PREFERRED_SIZE, 335, GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(LayoutStyle.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(lblR3, GroupLayout.PREFERRED_SIZE, 335, GroupLayout.PREFERRED_SIZE))
+                    .add(jPanel7Layout.createSequentialGroup()
+                        .add(lblR6, GroupLayout.PREFERRED_SIZE, 335, GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(LayoutStyle.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(lblR7, GroupLayout.PREFERRED_SIZE, 335, GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        jPanel7Layout.setVerticalGroup(jPanel7Layout.createParallelGroup(GroupLayout.LEADING)
+            .add(jPanel7Layout.createSequentialGroup()
+                .add(jPanel7Layout.createParallelGroup(GroupLayout.LEADING, false)
+                    .add(btnInference, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(lblR1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(LayoutStyle.RELATED)
+                .add(jPanel7Layout.createParallelGroup(GroupLayout.BASELINE)
+                    .add(lblR2, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+                    .add(lblR3, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(LayoutStyle.RELATED)
+                .add(jPanel7Layout.createParallelGroup(GroupLayout.LEADING)
+                    .add(lblR4, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+                    .add(lblR5, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(LayoutStyle.RELATED)
+                .add(jPanel7Layout.createParallelGroup(GroupLayout.BASELINE)
+                    .add(lblR6, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+                    .add(lblR7, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel8.setBackground(new Color(0, 51, 204));
+        jPanel8.setBorder(BorderFactory.createTitledBorder(null, bundle.getString("Main.jPanel8.border.title"), TitledBorder.LEFT, TitledBorder.TOP, new Font("Tahoma", 1, 12))); // NOI18N
+
+        btnAgregation.setFont(new Font("Times New Roman", 0, 14)); // NOI18N
+        btnAgregation.setText(bundle.getString("Main.btnAgregation.text")); // NOI18N
+        btnAgregation.setHorizontalTextPosition(SwingConstants.CENTER);
+        btnAgregation.setPreferredSize(new Dimension(192, 25));
+        btnAgregation.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btnAgregationActionPerformed(evt);
+            }
+        });
+
+        lblAgregation.setForeground(new Color(255, 255, 255));
+        lblAgregation.setText(bundle.getString("Main.lblAgregation.text")); // NOI18N
+
+        GroupLayout jPanel8Layout = new GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(jPanel8Layout.createParallelGroup(GroupLayout.LEADING)
+            .add(jPanel8Layout.createSequentialGroup()
+                .add(jPanel8Layout.createParallelGroup(GroupLayout.LEADING)
+                    .add(jPanel8Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .add(lblAgregation, GroupLayout.DEFAULT_SIZE, 862, Short.MAX_VALUE))
+                    .add(jPanel8Layout.createSequentialGroup()
+                        .add(310, 310, 310)
+                        .add(btnAgregation, GroupLayout.PREFERRED_SIZE, 261, GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        jPanel8Layout.setVerticalGroup(jPanel8Layout.createParallelGroup(GroupLayout.LEADING)
+            .add(jPanel8Layout.createSequentialGroup()
+                .add(btnAgregation, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(LayoutStyle.UNRELATED)
+                .add(lblAgregation, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel9.setBackground(new Color(0, 51, 204));
+        jPanel9.setBorder(BorderFactory.createTitledBorder(null, bundle.getString("Main.jPanel9.border.title"), TitledBorder.LEFT, TitledBorder.TOP, new Font("Times New Roman", 1, 12))); // NOI18N
+        jPanel9.setForeground(new Color(255, 255, 255));
+
+        btnDeFuzzy.setText(bundle.getString("Main.btnDeFuzzy.text")); // NOI18N
+        btnDeFuzzy.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                btnDeFuzzyActionPerformed(evt);
+            }
+        });
+
+        lblDeFuzzy.setForeground(new Color(255, 255, 255));
+        lblDeFuzzy.setHorizontalAlignment(SwingConstants.CENTER);
+        lblDeFuzzy.setText(bundle.getString("Main.lblDeFuzzy.text")); // NOI18N
+        lblDeFuzzy.setHorizontalTextPosition(SwingConstants.CENTER);
+
+        GroupLayout jPanel9Layout = new GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(jPanel9Layout.createParallelGroup(GroupLayout.LEADING)
+            .add(jPanel9Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(lblDeFuzzy, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .add(jPanel9Layout.createSequentialGroup()
+                .add(313, 313, 313)
+                .add(btnDeFuzzy, GroupLayout.PREFERRED_SIZE, 268, GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel9Layout.setVerticalGroup(jPanel9Layout.createParallelGroup(GroupLayout.LEADING)
+            .add(jPanel9Layout.createSequentialGroup()
+                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .add(btnDeFuzzy)
+                .addPreferredGap(LayoutStyle.UNRELATED)
+                .add(lblDeFuzzy, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
+        );
+
+        GroupLayout jPanel3Layout = new GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(jPanel3Layout.createParallelGroup(GroupLayout.LEADING)
+            .add(jPanel2, GroupLayout.DEFAULT_SIZE, 894, Short.MAX_VALUE)
+            .add(jPanel7, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .add(jPanel8, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .add(jPanel9, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(jPanel3Layout.createParallelGroup(GroupLayout.LEADING)
+            .add(jPanel3Layout.createSequentialGroup()
+                .add(jPanel2, GroupLayout.PREFERRED_SIZE, 169, GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(LayoutStyle.RELATED)
+                .add(jPanel7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(LayoutStyle.RELATED)
+                .add(jPanel8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(LayoutStyle.RELATED)
+                .add(jPanel9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        jTabbedPane1.addTab(bundle.getString("Main.jPanel3.TabConstraints.tabTitle"), jPanel3); // NOI18N
+
+        jTabbedPane1.setSelectedComponent(gamePlay2);
 
         GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(layout.createParallelGroup(GroupLayout.LEADING)
-            .add(gamePlay1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+            .add(layout.createSequentialGroup()
+                .add(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 899, GroupLayout.PREFERRED_SIZE)
+                .add(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(layout.createParallelGroup(GroupLayout.LEADING)
-            .add(gamePlay1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .add(jTabbedPane1, GroupLayout.PREFERRED_SIZE, 656, GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnZeroInActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnZeroInActionPerformed
+
+        flc.initZero(txtFieldSetU, txtFieldSetX, lblZero);
+    }//GEN-LAST:event_btnZeroInActionPerformed
+
+    private void txtFieldSetUMouseClicked(MouseEvent evt) {//GEN-FIRST:event_txtFieldSetUMouseClicked
+        txtFieldSetU.setText("");
+    }//GEN-LAST:event_txtFieldSetUMouseClicked
+
+    private void txtFieldSetXMouseClicked(MouseEvent evt) {//GEN-FIRST:event_txtFieldSetXMouseClicked
+        txtFieldSetX.setText("");
+    }//GEN-LAST:event_txtFieldSetXMouseClicked
+
+    private void txtFieldSetUActionPerformed(ActionEvent evt) {//GEN-FIRST:event_txtFieldSetUActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFieldSetUActionPerformed
+
+    private void btnSomeLeftActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnSomeLeftActionPerformed
+        flc.initSomeLeft(txtFieldSetU, txtFieldSetX, lblSomeLeft);
+    }//GEN-LAST:event_btnSomeLeftActionPerformed
+
+    private void txtFieldSetXActionPerformed(ActionEvent evt) {//GEN-FIRST:event_txtFieldSetXActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFieldSetXActionPerformed
+
+    private void btnLeftActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnLeftActionPerformed
+        flc.initLeft(txtFieldSetU, txtFieldSetX, lblLeft);
+    }//GEN-LAST:event_btnLeftActionPerformed
+
+    private void btnExtremeLeftActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnExtremeLeftActionPerformed
+        flc.initExtremeLeft(txtFieldSetU, txtFieldSetX, lblExtremeLeft);
+    }//GEN-LAST:event_btnExtremeLeftActionPerformed
+
+    private void btnSomeRightActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnSomeRightActionPerformed
+        flc.initSomeRigth(txtFieldSetU, txtFieldSetX, lblSomeRight);
+    }//GEN-LAST:event_btnSomeRightActionPerformed
+
+    private void btnRightActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnRightActionPerformed
+        flc.initRigth(txtFieldSetU, txtFieldSetX, lblRight);
+    }//GEN-LAST:event_btnRightActionPerformed
+
+    private void btnExtremeRightActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnExtremeRightActionPerformed
+        flc.initExtremeRigth(txtFieldSetU, txtFieldSetX, lblExtremeRight);
+    }//GEN-LAST:event_btnExtremeRightActionPerformed
+
+    private void btnFuzzyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFuzzyActionPerformed
+        lblZeroFuzzy.setText("ZERO (220) = " + flc.fuzzyfication(flc.getZero()));
+        lblSomeLeftFuzzy.setText("SOME_LEFT (220) = " + flc.fuzzyfication(flc.getSomeLeft()));
+        lblLeftFuzzy.setText("LEFT (220) = " + flc.fuzzyfication(flc.getLeft()));
+        lblExtremeLeftFuzzy.setText("EXTREME_LEFT (220) = " + flc.fuzzyfication(flc.getExtremeLeft()));
+        lblSomeRightFuzzy.setText("SOME_RIGHT (220) = " + flc.fuzzyfication(flc.getSomeRight()));
+        lblRightFuzzy.setText("RIGHT (220) = " + flc.fuzzyfication(flc.getRight()));
+        lblExtremRightFuzzy.setText("EXTREME_RIGHT (220) = " + flc.fuzzyfication(flc.getExtremeRight()));
+    }//GEN-LAST:event_btnFuzzyActionPerformed
+
+    private void btnInferenceActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnInferenceActionPerformed
+        lblR1.setText("R1 MIN(0, ZERO) = " + String.valueOf(flc.inference(0, flc.getZeroOut())));
+        lblR2.setText("R2 MIN(0, SOME_LEFT) = " + String.valueOf(flc.inference(0, flc.getSomeLeftOut())));
+        lblR3.setText("R3 MIN(0, LEFT) = " + String.valueOf(flc.inference(0, flc.getLeftOut())));
+        lblR4.setText("R4 MIN(0, EXTREME_LEFT) = " + String.valueOf(flc.inference(0, flc.getExtremeLefOut())));
+        lblR5.setText("R5 MIN(0.165, SOME_RIGHT) = " + String.valueOf(flc.inference(0.165, flc.getSomeRightOut())));
+        lblR6.setText("R6 MIN(0.830, RIGHT) = " + String.valueOf(flc.inference(0, flc.getRightOut())));
+        lblR7.setText("R7 MIN(0,EXTREME_RIGHT) = " + String.valueOf(flc.inference(0, flc.getExtremeRightOut())));
+    }//GEN-LAST:event_btnInferenceActionPerformed
+
+    private void btnAgregationActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnAgregationActionPerformed
+        lblAgregation.setText("MAX(ZERO; SOME_LEFT; LEFT; EXTREME_LEFT; SOME_RIGHT; RIGHT; EXTREME_RIGHT) = "
+                + "{{0/0}; {0/-12}; {0/-24}; {0/-36}; {0.165/12}; {0.830/24}; {0/36}}");
+    }//GEN-LAST:event_btnAgregationActionPerformed
+
+    private void btnDeFuzzyActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnDeFuzzyActionPerformed
+        lblDeFuzzy.setText("Y = 0 * 0 + 0 * (-12) + 0 * (-24) + 0 * (-36) + 0.165 * 12 + 0.830 * 24 + 0 * 36 / " +
+                "0 + 0 + 0 + 0 + 0.165 + 0.830 + 0 = 22");
+    }//GEN-LAST:event_btnDeFuzzyActionPerformed
 
     /**
      * @param args the command line arguments
@@ -92,6 +789,65 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private GamePlay gamePlay1;
+    private JButton btnAgregation;
+    private JButton btnDeFuzzy;
+    private JButton btnExtremeLeft;
+    private JButton btnExtremeRight;
+    private JButton btnFuzzy;
+    private JButton btnInference;
+    private JButton btnLeft;
+    private JButton btnRight;
+    private JButton btnSomeLeft;
+    private JButton btnSomeRight;
+    private JButton btnZeroIn;
+    private GamePlay gamePlay2;
+    private JLabel jLabel1;
+    private JLabel jLabel23;
+    private JLabel jLabel5;
+    private JLabel jLabel6;
+    private JLabel jLabel7;
+    private JLabel jLabel8;
+    private JLabel jLabel9;
+    private JPanel jPanel1;
+    private JPanel jPanel2;
+    private JPanel jPanel3;
+    private JPanel jPanel4;
+    private JPanel jPanel5;
+    private JPanel jPanel6;
+    private JPanel jPanel7;
+    private JPanel jPanel8;
+    private JPanel jPanel9;
+    private JSeparator jSeparator1;
+    private JSeparator jSeparator2;
+    private JSeparator jSeparator3;
+    private JSeparator jSeparator4;
+    private JSeparator jSeparator5;
+    private JSeparator jSeparator6;
+    private JTabbedPane jTabbedPane1;
+    private JLabel lblAgregation;
+    private JLabel lblDeFuzzy;
+    private JLabel lblExtremRightFuzzy;
+    private JLabel lblExtremeLeft;
+    private JLabel lblExtremeLeftFuzzy;
+    private JLabel lblExtremeRight;
+    private JLabel lblLeft;
+    private JLabel lblLeftFuzzy;
+    private JLabel lblR1;
+    private JLabel lblR2;
+    private JLabel lblR3;
+    private JLabel lblR4;
+    private JLabel lblR5;
+    private JLabel lblR6;
+    private JLabel lblR7;
+    private JLabel lblRight;
+    private JLabel lblRightFuzzy;
+    private JLabel lblSomeLeft;
+    private JLabel lblSomeLeftFuzzy;
+    private JLabel lblSomeRight;
+    private JLabel lblSomeRightFuzzy;
+    private JLabel lblZero;
+    private JLabel lblZeroFuzzy;
+    private JTextField txtFieldSetU;
+    private JTextField txtFieldSetX;
     // End of variables declaration//GEN-END:variables
 }
